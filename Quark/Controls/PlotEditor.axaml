@@ -20,7 +20,6 @@
                 <controls:PianoRollKeys Grid.Row="1" x:Name="KeysLayer" ClipToBounds="True" IsHitTestVisible="False"
                                         KeyHeight="{Binding $parent[controls:PlotEditor].KeyHeight, Mode=OneWay}"
                                         ColorTheme="{Binding $parent[controls:PlotEditor].ColorTheme, Mode=OneWay}" />
-                
 
                 <controls:NativeRenderPanel x:Name="RulerLayer" Grid.Column="1"
                                             Rendering="Ruler_Rendering" IsHitTestVisible="False" ClipToBounds="True" />
@@ -30,7 +29,7 @@
 
                 <Canvas x:Name="PART_Notes" Grid.Column="1" Grid.Row="1" ClipToBounds="True" IsHitTestVisible="False" />
 
-                <controls:EditorWaveform x:Name="WaveformLayer" Grid.Column="1" Grid.Row="1" IsHitTestVisible="False" ClipToBounds="True" />
+                <controls:PitchEditor x:Name="WaveformLayer" Grid.Column="1" Grid.Row="1" IsHitTestVisible="False" ClipToBounds="True" />
                 
                 <controls:DynamicsEditor x:Name="DynamicsLayer" Grid.Column="1" Grid.Row="2" IsHitTestVisible="False" ClipToBounds="True"
                                          Height="200" IsVisible="False" />

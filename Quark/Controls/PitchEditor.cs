@@ -6,7 +6,7 @@ using Quark.Renderers;
 
 namespace Quark.Controls;
 
-internal class EditorWaveform : Control
+internal class PitchEditor : Control
 {
     private INeutrinoTrack? _track;
     private IVisualRenderer? _renderer;
@@ -16,7 +16,6 @@ internal class EditorWaveform : Control
     {
         if (track != null)
         {
-
             this._track = track;
             this._renderer = PitchRenderer.Create(track);
         }

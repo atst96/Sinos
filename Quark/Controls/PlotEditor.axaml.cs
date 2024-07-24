@@ -20,7 +20,6 @@ using System.Numerics;
 using Quark.Extensions;
 using SkiaSharp;
 using Avalonia.Media;
-using Quark.Renderers;
 
 namespace Quark.Controls;
 public partial class PlotEditor : UserControl
