@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目", "ソリューション項目", "{49567AEC-1541-4ED2-922A-A0F753DBF329}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		.filenesting.json = .filenesting.json
+		Directory.Build.props = Directory.Build.props
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -19,6 +21,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark.DependencyInjection", "Quark.DependencyInjection\Quark.DependencyInjection.csproj", "{9FDBF8B9-F751-4EE9-AB45-F159D1213649}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark", "Quark\Quark.csproj", "{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicXmlAnalyzer", "MusicXmlAnalyzer\MusicXmlAnalyzer.csproj", "{EE2CCA72-9627-4710-9A29-7F52C5F31615}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,6 +94,18 @@ Global
 		{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}.Release|x64.Build.0 = Release|Any CPU
 		{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}.Release|x86.ActiveCfg = Release|Any CPU
 		{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}.Release|x86.Build.0 = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|x64.Build.0 = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x64.ActiveCfg = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x64.Build.0 = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
