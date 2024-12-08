@@ -9,7 +9,7 @@ public class TaskQueue<TElement, TPriority>
     where TElement : ITaskQueueElement
 {
     /// <summary>排他ロック用オブジェクト</summary>
-    private readonly object @_lock = new();
+    private readonly Lock @_lock = new();
 
     /// <summary>データ処理時のタスク</summary>
     private readonly Func<TElement, Task> _task;

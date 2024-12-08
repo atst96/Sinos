@@ -12,7 +12,7 @@ namespace Quark.Audio;
 /// </summary>
 public class WaveData
 {
-    private object @_lock = new();
+    private readonly Lock @_lock = new();
 
     /// <summary>データ領域</summary>
     private byte[] _data;
@@ -41,7 +41,7 @@ public class WaveData
     /// <summary>WAVEデータを初期化する</summary>
     public void Clear()
     {
-        lock (this._lock)
+        lock (this.@_lock)
         {
             this._data.AsSpan().Clear();
             this.Length = 0;
