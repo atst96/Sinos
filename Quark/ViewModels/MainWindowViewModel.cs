@@ -12,7 +12,7 @@ using Quark.Controls;
 using Quark.Data.Settings;
 using Quark.DependencyInjection;
 using Quark.Drawing;
-using Quark.Models.MusicXML;
+using MusicXml;
 using Quark.Mvvm;
 using Quark.Neutrino;
 using Quark.Projects;
@@ -306,7 +306,7 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
 
         this.SetRecentDirectory(RecentDirectoryType.ImportMusicXml, Path.GetDirectoryName(path)!);
 
-        (ScorePartElement Info, Models.MusicXML.Part Part)[] parts;
+        (ScorePartElement Info, Part Part)[] parts;
         using (var fs = File.OpenRead(path))
         {
             parts = MusicXmlUtil.EnumerateParts(fs).ToArray();

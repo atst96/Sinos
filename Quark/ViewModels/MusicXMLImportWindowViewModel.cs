@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Windows.Input;
-using Quark.Models.MusicXML;
+using MusicXml;
 using Quark.Models.Neutrino;
 using Quark.Mvvm;
 using Quark.Services;

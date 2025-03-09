@@ -1,7 +1,7 @@
 ﻿using Quark.Data;
 using Quark.DependencyInjection;
 using Quark.Factories;
-using Quark.Models.MusicXML;
+using MusicXml;
 using Quark.Projects;
 using Quark.ViewModels;
 

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MusicXml\MusicXml.csproj" />
     <ProjectReference Include="..\Quark.DependencyInjection\Quark.DependencyInjection.csproj" />
   </ItemGroup>
 

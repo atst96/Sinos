@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark", "Quark\Quark.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicXmlAnalyzer", "MusicXmlAnalyzer\MusicXmlAnalyzer.csproj", "{EE2CCA72-9627-4710-9A29-7F52C5F31615}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicXml", "MusicXml\MusicXml.csproj", "{A44A31ED-1CE7-4A79-8FCA-185321A142CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,18 @@ Global
 		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x64.Build.0 = Release|Any CPU
 		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x86.ActiveCfg = Release|Any CPU
 		{EE2CCA72-9627-4710-9A29-7F52C5F31615}.Release|x86.Build.0 = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|x64.Build.0 = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{A44A31ED-1CE7-4A79-8FCA-185321A142CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

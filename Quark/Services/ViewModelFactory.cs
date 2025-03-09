@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using Quark.DependencyInjection;
-using Quark.Models.MusicXML;
+using MusicXml;
 using Quark.Projects;
 using Quark.Projects.Tracks;
 using Quark.ViewModels;

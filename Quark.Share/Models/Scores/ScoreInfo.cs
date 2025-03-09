@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using Quark.Models.MusicXML;
+using MusicXml;
 
 namespace Quark.Models.Scores;
 
