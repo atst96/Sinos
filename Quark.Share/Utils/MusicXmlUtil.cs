@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Xml.Serialization;
 using System.Xml;
-using Quark.Models.MusicXML;
+using MusicXml;
 using Quark.Models.Scores;
 using System.Text;
 using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
-using Quark.Models.MusicXML.NoteElements;
+using MusicXml.NoteElements;
 using System.Collections.Immutable;
 using Quark.Models;
 using System.Runtime.CompilerServices;
