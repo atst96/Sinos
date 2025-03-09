@@ -1,0 +1,8 @@
+<Solution>
+    <Project Path="Quark.Share\Quark.Share.csproj" />
+    <project Path="Quark.Share.Test\Quark.Share.Test.csproj" />
+    <project Path="Quark.DependencyInjection\Quark.DependencyInjection.csproj" />
+    <project Path="Quark\Quark.csproj" />
+    <project Path="MusicXmlAnalyzer\MusicXmlAnalyzer.csproj" />
+    <project Path="MusicXml\MusicXml.csproj" />
+</Solution>
