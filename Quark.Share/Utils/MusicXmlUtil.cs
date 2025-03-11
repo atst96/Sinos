@@ -1,15 +1,12 @@
-﻿using System.Diagnostics;
-using System.Xml.Serialization;
-using System.Xml;
-using MusicXml;
-using Quark.Models.Scores;
-using System.Text;
+﻿using System.Collections.Immutable;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO.Compression;
-using MusicXml.NoteElements;
-using System.Collections.Immutable;
-using Quark.Models;
 using System.Runtime.CompilerServices;
+using System.Text;
+using MusicXml;
+using MusicXml.NoteElements;
+using Quark.Models;
+using Quark.Models.Scores;
 
 namespace Quark.Utils;
 
@@ -21,35 +18,6 @@ public static class MusicXmlUtil
     /// <summary>テンポ未指定時に使用するテンポ(BPM)</summary>
     const double DefaultTempo = 100;
 
-    /// <summary>XMLデータのエンコーディング(BOM無しUTF-8)</summary>
-    private static readonly UTF8Encoding Utf8NonBom = new(false);
-
-    /// <summary>XMLデシリアライズ設定</summary>
-    private static readonly XmlReaderSettings _xmlReaderSettings = new()
-    {
-        DtdProcessing = DtdProcessing.Ignore,
-        IgnoreWhitespace = true,
-        IgnoreComments = true,
-        IgnoreProcessingInstructions = true,
-    };
-
-    /// <summary>XMLシリアライズ設定</summary>
-    private static readonly XmlWriterSettings _xmlWriterSetting = new()
-    {
-        NamespaceHandling = NamespaceHandling.OmitDuplicates,
-        Encoding = Utf8NonBom,
-    };
-
-    /// <summary>取得対象とするMusicXMLのメディアタイプ</summary>
-    private static readonly ImmutableHashSet<string> TargetMediaTypes = ImmutableHashSet.Create(StringComparer.OrdinalIgnoreCase,
-    [
-        "application/vnd.recordare.musicxml",
-        "application/vnd.recordare.musicxml+xml",
-    ]);
-
-    /// <summary>XMLシリアライズ時の名前空間(明示的に未設定)</summary>
-    private static readonly XmlSerializerNamespaces _xmlWriterNamespaces = new([XmlQualifiedName.Empty]);
-
     /// <summary>
     /// MusicXMLからパート情報を列挙する。
     /// </summary>
@@ -57,7 +25,7 @@ public static class MusicXmlUtil
     /// <returns></returns>
     public static IEnumerable<(ScorePartElement Info, Part Part)> EnumerateParts(Stream xmlStream)
     {
-        var score = Parse(xmlStream);
+        var score = MusicXmlDeserializer.Parse(xmlStream);
         if (score == null || score.Parts is not { Count: > 0 } scoreParts)
             return []; // パート情報がなければ空で返す
 
@@ -67,7 +35,7 @@ public static class MusicXmlUtil
             ?.ToDictionary(i => i.Id!)
             ?? [];
 
-        return scoreParts.Where(i => i != null)
+        return [.. scoreParts.Where(i => i != null)
             .Select(scorePart =>
             {
                 ScorePartElement? info;
@@ -79,8 +47,7 @@ public static class MusicXmlUtil
                 }
 
                 return (info, scorePart);
-            })
-            .ToArray();
+            })];
     }
 
     [Obsolete("This class method will delete.", false)]
@@ -278,166 +245,13 @@ public static class MusicXmlUtil
     }
 
     /// <summary>
-    /// MusicXMLデータをパースする。
-    /// </summary>
-    /// <param name="stream">対象データ</param>
-    /// <returns></returns>
-    /// <exception cref="NotSupportedException"></exception>
-    private static MusicXmlObject? Parse(Stream stream)
-    {
-        // 読み取り対象のストリーム
-        bool isCopiedStream = false;
-
-        // 現在位置
-        long currentPosition = stream.Position;
-        Span<byte> fileHeader = stackalloc byte[4];
-
-        // ファイルヘッダーを読み込む
-        if (stream.Read(fileHeader) < fileHeader.Length)
-        {
-            // 読み取れたデータが4バイト以下の場合
-            // MusicXML関連のデータでない可能性が極めて高いので読み取りを諦める
-            throw new NotSupportedException();
-        }
-
-        try
-        {
-            // ファイルヘッダの読み取り時に移動したファイルハンドルを元にに戻す
-            // FileStream、MemoryStream等のシークできるストリームの場合はシーク位置をも度に戻す
-            // NetworkStreamなどのシークできないストリームの場合は一旦MemoryStreamに移す
-            if (stream.CanSeek)
-            {
-                // FileStream、MemoryStream等のシークできるストリームの場合
-                stream.Position = currentPosition;
-            }
-            else
-            {
-                // ネットワークストリームなどのシークできないストリームの場合
-                // 読み取り済みのファイルヘッダとデータをMemoryStreamにコピーする
-                var baseStream = stream;
-                isCopiedStream = true;
-                stream = new MemoryStream();
-                stream.Write(fileHeader);
-                stream.CopyTo(baseStream);
-                stream.Position = 0;
-            }
-
-            if (ZipUtil.IsZipHeader(fileHeader))
-            {
-                // ファイルの先頭がZIPヘッダなら圧縮済みMusicXMLとして処理する
-                return ParseCompressedMusicXml(stream);
-            }
-            else
-            {
-                // その他の場合はMusicXMLとして処理する
-                return ParseTextBaseMusicXml(stream);
-            }
-        }
-        finally
-        {
-            // コピー済みストリームの場合は解放する
-            if (isCopiedStream)
-                stream.Dispose();
-        }
-    }
-
-    /// <summary>
-    /// 非圧縮のMusicXMLファイルをパースする。
-    /// </summary>
-    /// <param name="stream">対象データ</param>
-    /// <returns></returns>
-    public static MusicXmlObject? ParseTextBaseMusicXml(Stream stream)
-        => ParseXml<MusicXmlObject>(stream);
-
-    /// <summary>
-    /// 圧縮済みMusicXMLをパースする。
-    /// </summary>
-    /// <param name="stream">対象データ</param>
-    /// <returns></returns>
-    private static MusicXmlObject? ParseCompressedMusicXml(Stream stream)
-    {
-        using var zipArchive = new ZipArchive(stream, ZipArchiveMode.Read, true);
-
-        // メタ情報(ファイル一覧)を取得
-        if (TryGetArchiveFile(zipArchive, "META-INF/container.xml", out var filePath))
-        {
-            // MusicXMLを読み込む
-            var scoreFile = zipArchive.GetEntry(filePath);
-            if (scoreFile != null)
-                using (var entryStream = scoreFile.Open())
-                    return ParseTextBaseMusicXml(entryStream);
-        }
-
-        return null;
-    }
-
-    /// <summary>
-    /// ZIPアーカイブからMusicXMLファイルを探す。
-    /// </summary>
-    /// <param name="zipArchive"></param>
-    /// <param name="containerPath"></param>
-    /// <param name="path"></param>
-    /// <returns></returns>
-    private static bool TryGetArchiveFile(ZipArchive zipArchive, string containerPath, [NotNullWhen(true)] out string? path)
-    {
-        if (zipArchive.GetEntry(containerPath) is { } containerEntry)
-        {
-            // ZIPファイル内のMETA-INF/container.xmlを読み込む
-            ContainerXmlObject? containerXml;
-            using (var entryStream = containerEntry.Open())
-                containerXml = ParseXml<ContainerXmlObject>(entryStream);
-
-            // パスが設定されている情報に絞り込む
-            var files = containerXml?.RootFiles?.RootFile?.Where(f => !string.IsNullOrEmpty(f.FullPath));
-            if (files != null)
-            {
-                // MusicXMLファイルを探す
-                // メディアタイプが設定されている場合はMusicXMLのメディアタイプに合致するものを優先する
-                var file = files.FirstOrDefault(f => f.MediaType != null && TargetMediaTypes.Contains(f.MediaType))
-                    ?? files.FirstOrDefault(f => f.FullPath!.EndsWith(".xml", StringComparison.OrdinalIgnoreCase));
-                if (file != null)
-                {
-                    path = file.FullPath!;
-                    return true;
-                }
-            }
-        }
-
-        path = null;
-        return false;
-    }
-
-    /// <summary>
-    /// XMLデータをパースする。
-    /// </summary>
-    /// <typeparam name="T">デシリアライズ後の型</typeparam>
-    /// <param name="stream">対象データ</param>
-    /// <returns></returns>
-    /// <exception cref="NotSupportedException"></exception>
-    private static T ParseXml<T>(Stream stream) where T : class
-    {
-        using (var streamReader = new StreamReader(stream, Encoding.UTF8))
-        using (var reader = XmlReader.Create(streamReader, _xmlReaderSettings))
-            return XmlUtil.GetXmlSerializer<T>().Deserialize(reader) as T ?? throw new NotSupportedException();
-    }
-
-    /// <summary>
     /// パートごとのMusicXMLを作成する。
     /// </summary>
     /// <param name="part">パート情報</param>
     /// <param name="partName">パート名</param>
     /// <returns>XML文字列</returns>
     public static string ToXmlString(Part part, string partName)
-        => Utf8NonBom.GetString(ToXmlData(part, partName));
-
-    /// <summary>
-    /// パートごとのMusicXMLを作成する。
-    /// </summary>
-    /// <param name="part">パート情報</param>
-    /// <param name="partName">パート名</param>
-    /// <returns>XMLデータ(バイナリ)</returns>
-    private static byte[] ToXmlData(Part part, string partName)
-        => ToXmlData(new MusicXmlObject()
+        => MusicXmlSerializer.ToXmlString(new MusicXmlObject()
         {
             Version = "4.0",
             Identification = new()
@@ -450,25 +264,6 @@ public static class MusicXmlUtil
             },
             Parts = [new() { Id = "1", Measures = part.Measures }]
         });
-
-    /// <summary>
-    /// オブジェクトをMusicXMLに変換する。
-    /// </summary>
-    /// <typeparam name="T">シリアライズ前の型情報</typeparam>
-    /// <param name="obj">対象オブジェクト</param>
-    /// <returns>シリアライズ後データ</returns>
-    private static byte[] ToXmlData<T>(T obj) where T : class
-    {
-        const string PubId = "-//Recordare//DTD MusicXML 4.0 Partwise//EN";
-        const string SysId = "http://www.musicxml.org/dtds/partwise.dtd";
-
-        using var ms = new MemoryStream();
-        using var writer = XmlWriter.Create(ms, _xmlWriterSetting);
-        writer.WriteDocType("score-partwise", PubId, SysId, null);
-
-        XmlUtil.GetXmlSerializer<T>().Serialize(writer, obj, _xmlWriterNamespaces);
-        return ms.ToArray();
-    }
 
     static int GetCode(Pitch pitch)
     {
