@@ -2,6 +2,12 @@
     <project Path="Sinos\Sinos.csproj" />
     <Project Path="Sinos.Common\Sinos.Common.csproj" />
     <project Path="Sinos.Common.Test\Sinos.Common.Test.csproj" />
+    <Folder Name="/ソリューション項目/">
+        <File Path=".editorconfig" />
+        <File Path="Directory.Build.props" />
+        <File Path="LICENSE" />
+        <File Path="README.md" />
+    </Folder>
     <project Path="Sinos.Common.MusicXml\Sinos.Common.MusicXml.csproj" />
     <project Path="Sinos.DependencyInjection\Sinos.DependencyInjection.csproj" />
 </Solution>
