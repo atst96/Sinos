@@ -3,7 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Quark.DependencyInjection;
+namespace Sinos.DependencyInjection;
 
 /// <summary>
 /// 依存性注入のヘルパークラス

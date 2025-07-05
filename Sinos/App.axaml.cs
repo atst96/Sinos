@@ -3,17 +3,17 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using Quark.Views;
-using Quark.DependencyInjection;
-using Quark.Services;
+using Sinos.Views;
+using Sinos.DependencyInjection;
+using Sinos.Services;
 using Avalonia.Controls;
 
-namespace Quark;
+namespace Sinos;
 
 public partial class App : Application
 {
     /// <summary>アプリケーション名</summary>
-    public const string AppName = "Quark";
+    public const string AppName = "Sinos";
 
     public override void Initialize()
     {

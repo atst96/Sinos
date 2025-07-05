@@ -1,10 +1,10 @@
-﻿using Quark.Models.Neutrino;
+﻿using Sinos.Models.Neutrino;
 using System.Text;
-using Quark.Extensions;
+using Sinos.Extensions;
 using System.Text.RegularExpressions;
-using Quark.Data;
+using Sinos.Data;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// NEUTRINOの推論モデルに関するUtilクラス

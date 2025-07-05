@@ -1,4 +1,4 @@
-﻿namespace Quark.Neutrino;
+﻿namespace Sinos.Neutrino;
 
 /// <summary>
 /// MusicXmlからタイミング情報への変換オプション

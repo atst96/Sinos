@@ -1,6 +1,6 @@
 ﻿using NAudio.Wave;
 
-namespace Quark.Audio;
+namespace Sinos.Audio;
 
 /// <summary>
 /// <see cref="WaveData"/>に蓄積した音声データをNAudioで再生するための処理

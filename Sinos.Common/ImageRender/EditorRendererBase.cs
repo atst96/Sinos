@@ -1,10 +1,10 @@
-﻿using Quark.ImageRender.Parts;
-using Quark.ImageRender.PianoRoll;
-using Quark.ImageRender.Score;
-using Quark.Utils;
+﻿using Sinos.ImageRender.Parts;
+using Sinos.ImageRender.PianoRoll;
+using Sinos.ImageRender.Score;
+using Sinos.Utils;
 using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public abstract class EditorRendererBase
 {

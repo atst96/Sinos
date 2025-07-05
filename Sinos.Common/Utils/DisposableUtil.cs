@@ -1,4 +1,4 @@
-﻿namespace Quark.Utils;
+﻿namespace Sinos.Utils;
 
 /// <summary>
 /// IDIsposableに関するユーティリティ

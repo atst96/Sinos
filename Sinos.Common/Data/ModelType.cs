@@ -1,4 +1,4 @@
-﻿namespace Quark.Data;
+﻿namespace Sinos.Data;
 
 /// <summary>
 /// モデル種別

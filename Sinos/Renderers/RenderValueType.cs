@@ -1,4 +1,4 @@
-﻿namespace Quark.Renderers;
+﻿namespace Sinos.Renderers;
 
 /// <summary>
 /// 描画対象の線の状態

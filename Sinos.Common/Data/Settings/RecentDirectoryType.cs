@@ -1,4 +1,4 @@
-﻿namespace Quark.Data.Settings;
+﻿namespace Sinos.Data.Settings;
 
 /// <summary>ディレクトリの種類</summary>
 public enum RecentDirectoryType : int

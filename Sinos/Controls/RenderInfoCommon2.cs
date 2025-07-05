@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Quark.ImageRender;
+using Sinos.ImageRender;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 internal class RenderInfoCommon2
 {

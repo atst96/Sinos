@@ -2,10 +2,10 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
-using Quark.Services;
-using Quark.UI.Mvvm;
+using Sinos.Services;
+using Sinos.UI.Mvvm;
 
-namespace Quark.Behaviors;
+namespace Sinos.Behaviors;
 
 public class ViewModelLocator
 {

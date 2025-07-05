@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Quark.Mvvm;
+namespace Sinos.Mvvm;
 
 public class ViewModelBase : ObservableObject, IDisposable
 {

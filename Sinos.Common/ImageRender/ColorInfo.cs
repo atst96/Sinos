@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 /// <summary>
 /// 色情報

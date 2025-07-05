@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace Quark.Converters;
+namespace Sinos.Converters;
 public class TimeSpanFormatConverter : AvaloniaObject, IValueConverter
 {
     /// <summary>フォーマット</summary>

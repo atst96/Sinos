@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
-using Quark.Utils;
+using Sinos.Utils;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class RenderScaleInfo
 {

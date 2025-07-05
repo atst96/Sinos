@@ -1,7 +1,7 @@
 ﻿using MemoryPack;
-using Quark.Data.Projects.Neutrino;
+using Sinos.Data.Projects.Neutrino;
 
-namespace Quark.Data.Projects.Tracks;
+namespace Sinos.Data.Projects.Tracks;
 
 [MemoryPackable]
 public partial class NeutrinoV2TrackConfig : TrackBaseConfig

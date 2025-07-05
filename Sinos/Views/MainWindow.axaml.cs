@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace Quark.Views;
+namespace Sinos.Views;
 
 public partial class MainWindow : Window
 {

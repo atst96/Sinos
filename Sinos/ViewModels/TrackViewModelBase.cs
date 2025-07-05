@@ -1,6 +1,6 @@
-﻿using Quark.Mvvm;
+﻿using Sinos.Mvvm;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 public abstract class TrackViewModelBase : ViewModelBase
 {

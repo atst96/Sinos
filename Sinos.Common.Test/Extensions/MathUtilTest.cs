@@ -1,6 +1,6 @@
-﻿using Quark.Utils;
+﻿using Sinos.Utils;
 
-namespace Quark.Share.Test.Extensions;
+namespace Sinos.Share.Test.Extensions;
 
 /// <summary>
 /// Test for <see cref="MathUtil"/> class.

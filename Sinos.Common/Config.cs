@@ -1,4 +1,4 @@
-﻿namespace Quark;
+﻿namespace Sinos;
 
 internal static class Config
 {

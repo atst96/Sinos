@@ -1,8 +1,8 @@
 ﻿using System;
-using Quark.Models.Neutrino;
-using Quark.Projects.Tracks;
+using Sinos.Models.Neutrino;
+using Sinos.Projects.Tracks;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 public abstract class NeutrinoTrackViewModelBase : TrackViewModelBase
 {

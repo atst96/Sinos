@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls.Editing;
+﻿namespace Sinos.Controls.Editing;
 
 /// <summary>
 /// 範囲選択情報

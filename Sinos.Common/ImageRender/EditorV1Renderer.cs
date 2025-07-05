@@ -1,7 +1,7 @@
-﻿using Quark.ImageRender.Score;
+﻿using Sinos.ImageRender.Score;
 using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class EditorV1Renderer : EditorRendererBase
 {

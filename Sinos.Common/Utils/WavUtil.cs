@@ -1,8 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
-using Quark.Structs;
+using Sinos.Structs;
 using System.Runtime.InteropServices;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>Wavファイル操作に関するUtil</summary>
 public static class WavUtil

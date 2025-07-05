@@ -1,12 +1,12 @@
 ﻿using System;
 using Avalonia.Threading;
-using Quark.Data.Projects;
-using Quark.DependencyInjection;
-using Quark.Mvvm;
-using Quark.Services;
-using Quark.UI.Mvvm;
+using Sinos.Data.Projects;
+using Sinos.DependencyInjection;
+using Sinos.Mvvm;
+using Sinos.Services;
+using Sinos.UI.Mvvm;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 [Prototype]
 internal class ProgressWindowViewModel : ViewModelBase, IDialogServiceViewModel, IProgress<ProgressReport>

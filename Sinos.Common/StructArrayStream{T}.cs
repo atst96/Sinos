@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace Quark;
+namespace Sinos;
 
 public class StructArrayStream<T>(T[] data) : Stream
     where T : unmanaged

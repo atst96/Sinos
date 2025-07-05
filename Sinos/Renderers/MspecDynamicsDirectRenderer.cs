@@ -2,15 +2,15 @@
 using System.Numerics;
 using Avalonia;
 using Avalonia.Media;
-using Quark.ImageRender;
-using Quark.Projects.Tracks;
-using Quark.Utils;
-using Quark.Extensions;
+using Sinos.ImageRender;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
+using Sinos.Extensions;
 using System.Linq;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 /// <summary>
 /// ダイナミクス値(生の値)の描画クラス

@@ -2,10 +2,10 @@
 using System.Collections.Specialized;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
-using Quark.Audio;
-using Quark.Projects.Tracks;
+using Sinos.Audio;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Projects;
+namespace Sinos.Projects;
 
 public class AudioTrackMixer : ISampleProvider
 {

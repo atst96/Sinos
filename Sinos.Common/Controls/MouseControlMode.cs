@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls;
+﻿namespace Sinos.Controls;
 
 /// <summary>
 /// マウス制御モード

@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Converters;
+namespace Sinos.Converters;
 
 /// <summary>
 /// 音声データ変換クラス

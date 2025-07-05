@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics;
-using Quark.Converters;
-using Quark.Extensions;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+using Sinos.Converters;
+using Sinos.Extensions;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 using SkiaSharp;
 
-namespace Quark.ImageRender.Score;
+namespace Sinos.ImageRender.Score;
 
 /// <summary>
 /// 音程を描画する

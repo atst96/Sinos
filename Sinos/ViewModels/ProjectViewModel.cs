@@ -1,13 +1,13 @@
 ﻿using System;
 using Avalonia.Threading;
 using NAudio.Wave;
-using Quark.Audio;
-using Quark.Mvvm;
-using Quark.Projects;
-using Quark.Projects.Tracks;
-using Quark.Services;
+using Sinos.Audio;
+using Sinos.Mvvm;
+using Sinos.Projects;
+using Sinos.Projects.Tracks;
+using Sinos.Services;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 internal class ProjectViewModel : ViewModelBase
 {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Immutable;
 using System.Runtime.CompilerServices;
-using Quark.Drawing;
-using Quark.Models.Scores;
+using Sinos.Drawing;
+using Sinos.Models.Scores;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// 譜面描画に関するUtilクラス

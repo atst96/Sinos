@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface IMspecDynamicsPhraseTrack<TPhrase, TNumber>
     where TPhrase : IMspecDynamicsPhrase<TNumber>

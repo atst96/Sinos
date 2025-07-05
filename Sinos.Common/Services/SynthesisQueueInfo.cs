@@ -1,8 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
-using Quark.Components;
-using Quark.Projects.Tracks;
+using Sinos.Components;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 /// <summary>
 /// 音声合成キュー情報

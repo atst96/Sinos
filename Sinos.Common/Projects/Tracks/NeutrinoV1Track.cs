@@ -1,19 +1,19 @@
 ﻿using NAudio.Wave;
-using Quark.Audio;
-using Quark.Components;
-using Quark.Data.Projects.Neutrino;
-using Quark.Data.Projects.Tracks;
-using Quark.Data.Settings;
-using Quark.Extensions;
-using Quark.Models.Neutrino;
-using Quark.Models.Scores;
-using Quark.Neutrino;
-using Quark.Projects.Tracks.Base;
-using Quark.Renderers;
-using Quark.Services;
-using Quark.Utils;
+using Sinos.Audio;
+using Sinos.Components;
+using Sinos.Data.Projects.Neutrino;
+using Sinos.Data.Projects.Tracks;
+using Sinos.Data.Settings;
+using Sinos.Extensions;
+using Sinos.Models.Neutrino;
+using Sinos.Models.Scores;
+using Sinos.Neutrino;
+using Sinos.Projects.Tracks.Base;
+using Sinos.Renderers;
+using Sinos.Services;
+using Sinos.Utils;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 internal class NeutrinoV1Track : AudioTrackBase, INeutrinoTrack,
     IF0PhraseTrack<NeutrinoV1Phrase, double>,

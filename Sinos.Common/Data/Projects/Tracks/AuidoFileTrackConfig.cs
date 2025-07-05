@@ -1,6 +1,6 @@
 ﻿using MemoryPack;
 
-namespace Quark.Data.Projects.Tracks;
+namespace Sinos.Data.Projects.Tracks;
 
 [MemoryPackable(GenerateType.VersionTolerant)]
 public partial class AudioFileTrackConfig : TrackBaseConfig

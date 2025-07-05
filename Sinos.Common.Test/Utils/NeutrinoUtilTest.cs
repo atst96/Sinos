@@ -1,8 +1,8 @@
-﻿using Quark.Models.Neutrino;
-using Quark.Neutrino;
-using Quark.Utils;
+﻿using Sinos.Models.Neutrino;
+using Sinos.Neutrino;
+using Sinos.Utils;
 
-namespace Quark.Share.Test.Utils;
+namespace Sinos.Share.Test.Utils;
 
 public class NeutrinoUtilTest
 {

@@ -1,7 +1,7 @@
 ﻿using MemoryPack;
-using Quark.Utils;
+using Sinos.Utils;
 
-namespace Quark.Data.Projects.Neutrino;
+namespace Sinos.Data.Projects.Neutrino;
 
 [MemoryPackable(SerializeLayout.Explicit)]
 public partial class PhraseInfoV1

@@ -3,13 +3,13 @@ using System.Linq;
 using System.Numerics;
 using Avalonia;
 using Avalonia.Media;
-using Quark.Converters;
-using Quark.Extensions;
-using Quark.ImageRender;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+using Sinos.Converters;
+using Sinos.Extensions;
+using Sinos.ImageRender;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 internal class ScorePitchRenderer<TPhrase, TNumber> : PitchRenderer
     where TPhrase : IF0Phrase<TNumber>

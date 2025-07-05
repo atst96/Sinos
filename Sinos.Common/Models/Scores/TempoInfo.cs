@@ -1,4 +1,4 @@
-﻿namespace Quark.Models.Scores;
+﻿namespace Sinos.Models.Scores;
 
 /// <summary>
 /// テンポ変更情報

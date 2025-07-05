@@ -1,7 +1,7 @@
 ﻿using MemoryPack;
-using Quark.Components;
+using Sinos.Components;
 
-namespace Quark.Data.Settings;
+namespace Sinos.Data.Settings;
 
 /// <summary>
 /// 音声合成設定

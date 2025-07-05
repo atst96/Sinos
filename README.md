@@ -1,6 +1,6 @@
-# Quark
+# Sinos
 NEUTRINOで出力した音響データを調整する非公式ツール
-![image](https://github.com/atst1996/Quark/assets/6949910/fc5a6fd6-cea9-4528-952f-f43a48b3027d)
+![image](https://github.com/atst1996/Sinos/assets/6949910/fc5a6fd6-cea9-4528-952f-f43a48b3027d)
 
 ## 実装・動作について
 仮実装段階ですので、動作が不安定な点ご了承ください。  
@@ -22,4 +22,4 @@ NEUTRINOで出力した音響データを調整する非公式ツール
 .NET 8 SDK と C# 12.0 、WPF、WinForms が使用できる環境が必要です。
 ※ Visual Studio 2022を推奨、その他の環境は未確認です。
 
-このリポジトリをローカル環境にクローンし、Visual Studioで`Quark.Prototype`プロジェクトをビルド実行していただければ動作するかと思います。
+このリポジトリをローカル環境にクローンし、Visual Studioで`Quark`プロジェクトをビルド実行していただければ動作するかと思います。

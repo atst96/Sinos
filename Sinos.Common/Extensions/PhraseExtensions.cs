@@ -1,9 +1,9 @@
 ﻿using System.Numerics;
-using Quark.Projects.Tracks;
-using Quark.Utils;
-using static Quark.Utils.PhraseUtils;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
+using static Sinos.Utils.PhraseUtils;
 
-namespace Quark.Extensions;
+namespace Sinos.Extensions;
 
 /// <summary>
 /// フレーズに関する拡張メソッド

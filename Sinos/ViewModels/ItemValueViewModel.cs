@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 public class ItemValueViewModel<TValue>(TValue Value, string Description) : ObservableObject
 {

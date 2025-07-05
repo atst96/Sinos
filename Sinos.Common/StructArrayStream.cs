@@ -1,4 +1,4 @@
-﻿namespace Quark;
+﻿namespace Sinos;
 
 public class StructArrayStream
 {

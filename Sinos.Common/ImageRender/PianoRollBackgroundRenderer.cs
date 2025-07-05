@@ -1,10 +1,10 @@
-﻿using Quark.Drawing;
-using Quark.Models.Neutrino;
+﻿using Sinos.Drawing;
+using Sinos.Models.Neutrino;
 using SkiaSharp;
 using System.Runtime.CompilerServices;
-using static Quark.Controls.EditorRenderLayout;
+using static Sinos.Controls.EditorRenderLayout;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 internal class PianoRollBackgroundRenderer
 {

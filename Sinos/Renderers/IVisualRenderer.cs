@@ -1,7 +1,7 @@
 ﻿using Avalonia.Media;
-using Quark.ImageRender;
+using Sinos.ImageRender;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 public interface IVisualRenderer
 {

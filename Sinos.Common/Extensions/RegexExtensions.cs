@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
-namespace Quark.Extensions;
+namespace Sinos.Extensions;
 
 /// <summary>
 /// 正規表現に関する拡張メソッド

@@ -1,10 +1,10 @@
-﻿using Quark.Audio;
-using Quark.Data.Project;
-using Quark.Factories;
-using Quark.Services;
-using Quark.Utils;
+﻿using Sinos.Audio;
+using Sinos.Data.Project;
+using Sinos.Factories;
+using Sinos.Services;
+using Sinos.Utils;
 
-namespace Quark.Projects;
+namespace Sinos.Projects;
 
 internal class Project
 {

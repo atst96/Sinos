@@ -1,4 +1,4 @@
-﻿namespace Quark.Neutrino;
+﻿namespace Sinos.Neutrino;
 
 /// <summary>
 /// 処理速度・品質設定

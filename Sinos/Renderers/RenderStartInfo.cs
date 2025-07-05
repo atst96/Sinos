@@ -1,4 +1,4 @@
-﻿namespace Quark.Renderers;
+﻿namespace Sinos.Renderers;
 
 /// <summary>
 /// 描画開始位置の情報

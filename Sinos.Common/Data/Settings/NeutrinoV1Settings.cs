@@ -1,6 +1,6 @@
 ﻿using MemoryPack;
 
-namespace Quark.Data.Settings;
+namespace Sinos.Data.Settings;
 
 [MemoryPackable]
 public partial class NeutrinoV1Settings

@@ -1,6 +1,6 @@
-﻿using Quark.Models.Neutrino;
+﻿using Sinos.Models.Neutrino;
 
-namespace Quark.Models;
+namespace Sinos.Models;
 
 public class NoteTiming(int noteIndex, TimingInfo[] timings)
 {

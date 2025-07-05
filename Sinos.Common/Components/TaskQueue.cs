@@ -1,6 +1,6 @@
-﻿using Quark.Services;
+﻿using Sinos.Services;
 
-namespace Quark.Components;
+namespace Sinos.Components;
 
 /// <summary>非同期でタスクを実行するクラス</summary>
 /// <typeparam name="TElement">データ要素の型</typeparam>

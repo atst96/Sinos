@@ -1,4 +1,4 @@
-﻿namespace Quark.Drawing;
+﻿namespace Sinos.Drawing;
 
 /// <summary>
 /// ピアノロール上の縦線情報

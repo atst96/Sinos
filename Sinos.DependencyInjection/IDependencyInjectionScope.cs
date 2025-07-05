@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quark.DependencyInjection;
+namespace Sinos.DependencyInjection;
 
 internal interface IDependencyInjectionScope
 {

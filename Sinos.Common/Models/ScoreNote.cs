@@ -1,6 +1,6 @@
 ﻿using MusicXml;
 
-namespace Quark.Models;
+namespace Sinos.Models;
 
 /// <summary>
 /// 音符情報

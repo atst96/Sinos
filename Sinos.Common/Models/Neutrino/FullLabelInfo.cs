@@ -1,4 +1,4 @@
-﻿namespace Quark.Models.Neutrino;
+﻿namespace Sinos.Models.Neutrino;
 
 internal record FullLabelInfo(
     long Begin,

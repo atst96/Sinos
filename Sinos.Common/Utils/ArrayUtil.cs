@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// 配列操作に関するUtilクラス

@@ -1,6 +1,6 @@
-﻿using Quark.Utils;
+﻿using Sinos.Utils;
 
-namespace Quark.Audio;
+namespace Sinos.Audio;
 
 /// <summary>
 /// WAVEデータ管理

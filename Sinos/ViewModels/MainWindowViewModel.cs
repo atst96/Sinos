@@ -7,21 +7,21 @@ using System.Windows.Input;
 using Avalonia.Controls;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.Input;
-using Quark.Components;
-using Quark.Controls;
-using Quark.Data.Settings;
-using Quark.DependencyInjection;
-using Quark.Drawing;
+using Sinos.Components;
+using Sinos.Controls;
+using Sinos.Data.Settings;
+using Sinos.DependencyInjection;
+using Sinos.Drawing;
 using MusicXml;
-using Quark.Mvvm;
-using Quark.Neutrino;
-using Quark.Projects;
-using Quark.Projects.Tracks;
-using Quark.Services;
-using Quark.UI.Mvvm;
-using Quark.Utils;
+using Sinos.Mvvm;
+using Sinos.Neutrino;
+using Sinos.Projects;
+using Sinos.Projects.Tracks;
+using Sinos.Services;
+using Sinos.UI.Mvvm;
+using Sinos.Utils;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 [Prototype]
 internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewModel
@@ -174,7 +174,7 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
         var path = await this.DialogService.SelectSaveFileAsync(
            title: "プロジェクトファイルを保存",
            initialDirectory: this.GetRecentDirectory(RecentDirectoryType.SaveProjectFile),
-           fileTypeFilters: [new("Quarkプロジェクト") { Patterns = ["*.qprj"] }]
+           fileTypeFilters: [new("Sinosプロジェクト") { Patterns = ["*.qprj"] }]
            ).ConfigureAwait(false);
 
         if (path == null)
@@ -340,7 +340,7 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
         var path = await this.DialogService.SelectOpenFileAsync(
            title: "プロジェクトファイルを開く",
            initialDirectory: this.GetRecentDirectory(RecentDirectoryType.OpenProjectFile),
-           fileTypeFilters: [new("Quarkプロジェクト") { Patterns = ["*.qprj"] }]
+           fileTypeFilters: [new("Sinosプロジェクト") { Patterns = ["*.qprj"] }]
            ).ConfigureAwait(false);
 
         if (path == null)

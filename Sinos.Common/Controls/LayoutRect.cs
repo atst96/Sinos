@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using SkiaSharp;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// レイアウト計算時に使用する矩形

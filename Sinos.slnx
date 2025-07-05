@@ -4,5 +4,4 @@
     <project Path="Sinos.Common.Test\Sinos.Common.Test.csproj" />
     <project Path="Sinos.Common.MusicXml\Sinos.Common.MusicXml.csproj" />
     <project Path="Sinos.DependencyInjection\Sinos.DependencyInjection.csproj" />
-    <project Path="MusicXmlAnalyzer\MusicXmlAnalyzer.csproj" />
 </Solution>

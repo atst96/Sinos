@@ -1,7 +1,7 @@
 ﻿using NAudio.Wave;
-using Quark.Projects;
+using Sinos.Projects;
 
-namespace Quark.Audio;
+namespace Sinos.Audio;
 
 public class ProjectPlayer : IDisposable
 {

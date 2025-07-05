@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace Quark.Components;
+namespace Sinos.Components;
 
 public class DisposableCollection : List<IDisposable>, IDisposable
 {

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Xunit.Abstractions;
 
-namespace Quark.Share.Test;
+namespace Sinos.Share.Test;
 
 /// <summary>
 /// <seealso cref="PipeFile"/>のテスト

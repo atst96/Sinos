@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 public class EnumerableUtil
 {

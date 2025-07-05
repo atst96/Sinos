@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// レイアウト計算時の座標

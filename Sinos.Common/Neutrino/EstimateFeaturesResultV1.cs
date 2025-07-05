@@ -1,4 +1,4 @@
-﻿namespace Quark.Neutrino;
+﻿namespace Sinos.Neutrino;
 
 /// <summary>
 /// </summary>

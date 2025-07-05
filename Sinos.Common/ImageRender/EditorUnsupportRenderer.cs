@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class EditorUnsupportRenderer : EditorRendererBase
 {

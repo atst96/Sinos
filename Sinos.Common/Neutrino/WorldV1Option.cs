@@ -1,4 +1,4 @@
-﻿namespace Quark.Neutrino;
+﻿namespace Sinos.Neutrino;
 
 /// <summary>
 /// NEUTRINO(v1)のWORLD合成オプション

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Avalonia.Media;
-using Quark.ImageRender;
-using Quark.Utils;
+using Sinos.ImageRender;
+using Sinos.Utils;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 /// <summary>
 /// 描画処理の基底クラス

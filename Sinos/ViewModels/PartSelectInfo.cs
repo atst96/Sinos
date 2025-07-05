@@ -1,7 +1,7 @@
-﻿using Quark.Models.Neutrino;
-using Quark.Mvvm;
+﻿using Sinos.Models.Neutrino;
+using Sinos.Mvvm;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 public class PartSelectInfo : ViewModelBase
 {

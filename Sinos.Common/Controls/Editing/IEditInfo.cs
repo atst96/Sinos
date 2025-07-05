@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls.Editing;
+﻿namespace Sinos.Controls.Editing;
 
 /// <summary>
 /// 編集情報のインタフェース

@@ -1,15 +1,15 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Quark.Mvvm;
-using Quark.Services;
-using Quark.Data.Settings;
-using Quark.DependencyInjection;
-using Quark.Components;
-using Quark.UI.Mvvm;
+using Sinos.Mvvm;
+using Sinos.Services;
+using Sinos.Data.Settings;
+using Sinos.DependencyInjection;
+using Sinos.Components;
+using Sinos.UI.Mvvm;
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Collections.Immutable;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 [Prototype]
 internal partial class PreferenceWindowViewModel : ViewModelBase, IDialogServiceViewModel

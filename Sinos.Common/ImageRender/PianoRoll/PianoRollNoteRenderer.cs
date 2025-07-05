@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace Quark.ImageRender.Score;
+namespace Sinos.ImageRender.Score;
 
 /// <summary>
 /// ピアノロールのノートを描画するクラス

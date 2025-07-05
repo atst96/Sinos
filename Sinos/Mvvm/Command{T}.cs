@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Quark.Mvvm;
+namespace Sinos.Mvvm;
 
 /// <summary>
 /// コマンド

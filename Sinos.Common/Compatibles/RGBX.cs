@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Quark.Compatibles;
+namespace Sinos.Compatibles;
 
 /// <summary>
 /// RGB struct

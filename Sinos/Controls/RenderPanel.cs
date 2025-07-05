@@ -7,7 +7,7 @@ using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
 using SkiaSharp;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 internal class RenderPanel : Control
 {
     public event EventHandler<SKCanvas>? Rendering;

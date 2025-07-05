@@ -1,10 +1,10 @@
 ﻿using Avalonia.Controls.Shapes;
 using Avalonia.Media;
-using Quark.Models.Neutrino;
-using Quark.Projects.Tracks;
+using Sinos.Models.Neutrino;
+using Sinos.Projects.Tracks;
 using SkiaSharp;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 public class PhraseRect : Rectangle
 {

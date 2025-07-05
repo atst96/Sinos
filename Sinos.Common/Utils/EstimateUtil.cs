@@ -1,7 +1,7 @@
-﻿using Quark.Components;
-using Quark.Projects.Tracks;
+﻿using Sinos.Components;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 public static class EstimateUtil
 {

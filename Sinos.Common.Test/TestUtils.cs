@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Share.Test;
+namespace Sinos.Share.Test;
 
 
 public static class TestUtils

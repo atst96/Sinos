@@ -1,7 +1,7 @@
-﻿using Quark.Projects.Tracks;
-using Quark.Services;
+﻿using Sinos.Projects.Tracks;
+using Sinos.Services;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 internal class NeutrinoV2TrackViewModel : NeutrinoTrackViewModelBase
 {

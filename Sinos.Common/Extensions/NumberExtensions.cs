@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace Quark.Extensions;
+namespace Sinos.Extensions;
 
 /// <summary>
 /// 数値に関する拡張メソッド

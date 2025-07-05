@@ -1,6 +1,6 @@
-﻿using Quark.Models.Scores;
+﻿using Sinos.Models.Scores;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// 楽譜処理に関するUtilクラス

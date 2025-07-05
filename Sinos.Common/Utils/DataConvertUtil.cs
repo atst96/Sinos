@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// バイナリデータの操作に関するユーティリティ

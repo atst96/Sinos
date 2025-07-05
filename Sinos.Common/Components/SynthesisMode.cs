@@ -1,4 +1,4 @@
-﻿namespace Quark.Components;
+﻿namespace Sinos.Components;
 
 /// <summary>
 /// 音声合成モード

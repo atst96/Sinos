@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace Quark.Extensions;
+namespace Sinos.Extensions;
 
 /// <summary>
 /// 範囲関連を扱う拡張メソッド群

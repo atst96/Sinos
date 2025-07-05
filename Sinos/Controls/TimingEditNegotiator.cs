@@ -3,10 +3,10 @@ using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Threading;
-using Quark.ImageRender;
-using Quark.Neutrino;
+using Sinos.ImageRender;
+using Sinos.Neutrino;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// タイミング編集用の画面要素を調整するクラス

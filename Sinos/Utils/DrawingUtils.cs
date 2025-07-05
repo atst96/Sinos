@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Avalonia;
 using Avalonia.Media;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// 描画処理のUtilクラス

@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using MusicXml;
 
-namespace Quark.Models.Scores;
+namespace Sinos.Models.Scores;
 
 public class ScoreInfo(
     int BeginMeasureTime,

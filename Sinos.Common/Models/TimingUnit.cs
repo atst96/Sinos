@@ -1,4 +1,4 @@
-﻿namespace Quark.Models;
+﻿namespace Sinos.Models;
 
 public enum TimingUnit : uint
 {

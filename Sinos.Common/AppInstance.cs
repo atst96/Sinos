@@ -1,6 +1,6 @@
-﻿using Quark.Utils;
+﻿using Sinos.Utils;
 
-namespace Quark;
+namespace Sinos;
 
 public class AppInstance
 {

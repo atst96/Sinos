@@ -5,9 +5,9 @@ using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
-using Quark.Neutrino;
+using Sinos.Neutrino;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// タイミング編集用コントロール

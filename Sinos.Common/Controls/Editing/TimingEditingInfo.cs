@@ -1,6 +1,6 @@
-﻿using Quark.Neutrino;
+﻿using Sinos.Neutrino;
 
-namespace Quark.Controls.Editing;
+namespace Sinos.Controls.Editing;
 
 /// <summary>
 /// タイミング編集データ

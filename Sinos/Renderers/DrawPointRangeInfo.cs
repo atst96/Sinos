@@ -1,6 +1,6 @@
 ﻿using Avalonia;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 /// <summary>
 /// 座標配列の描画範囲情報

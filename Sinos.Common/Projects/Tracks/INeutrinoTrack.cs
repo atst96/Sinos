@@ -1,10 +1,10 @@
-﻿using Quark.Audio;
-using Quark.Components;
-using Quark.Models.Neutrino;
-using Quark.Models.Scores;
-using Quark.Neutrino;
+﻿using Sinos.Audio;
+using Sinos.Components;
+using Sinos.Models.Neutrino;
+using Sinos.Models.Scores;
+using Sinos.Neutrino;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface INeutrinoTrack : IAudioTrack
 {

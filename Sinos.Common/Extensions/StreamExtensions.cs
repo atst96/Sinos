@@ -1,4 +1,4 @@
-﻿namespace Quark.Extensions;
+﻿namespace Sinos.Extensions;
 
 /// <summary>
 /// <see cref="Stream"/>に関する拡張メソッド

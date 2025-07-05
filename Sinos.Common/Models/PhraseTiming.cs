@@ -1,4 +1,4 @@
-﻿namespace Quark.Models;
+﻿namespace Sinos.Models;
 
 public class PhraseTiming(int no, NoteTiming[] timings, bool isVoice)
 {

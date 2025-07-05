@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class EditorPartsLayoutResolver
 {

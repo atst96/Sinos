@@ -2,7 +2,7 @@
 using NAudio.Wave.SampleProviders;
 using NAudio.Wave;
 
-namespace Quark.Audio;
+namespace Sinos.Audio;
 
 public class TrackSampleProvider : ISampleProvider
 {

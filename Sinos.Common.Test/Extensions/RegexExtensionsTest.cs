@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
-using Quark.Extensions;
+using Sinos.Extensions;
 
-namespace Quark.Share.Test.Extensions;
+namespace Sinos.Share.Test.Extensions;
 
 /// <summary>
 /// <see cref="RegexExtensions"/>のテスト

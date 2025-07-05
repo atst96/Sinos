@@ -1,4 +1,4 @@
-namespace Quark.Constants;
+﻿namespace Sinos.Constants;
 
 public static class FileExtensions
 {

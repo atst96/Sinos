@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls.Editing;
+﻿namespace Sinos.Controls.Editing;
 
 public class DynamicsSeekingInfo(int BeginTime, int EndTime, double Coe) : IEditInfo
 {

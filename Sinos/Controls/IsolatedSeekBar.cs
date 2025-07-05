@@ -5,7 +5,7 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// 画面外配置のシークバーコントロール

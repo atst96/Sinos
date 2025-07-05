@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls.Editing;
+﻿namespace Sinos.Controls.Editing;
 
 /// <summary>
 /// ダイナミクス編集情報

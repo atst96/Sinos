@@ -1,10 +1,10 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Media;
-using Quark.ImageRender;
-using Quark.Projects.Tracks;
-using Quark.Renderers;
+using Sinos.ImageRender;
+using Sinos.Projects.Tracks;
+using Sinos.Renderers;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 public class DynamicsEditor : Control
 {

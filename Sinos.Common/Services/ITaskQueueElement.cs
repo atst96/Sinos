@@ -1,4 +1,4 @@
-﻿namespace Quark.Services;
+﻿namespace Sinos.Services;
 
 /// <summary>
 /// TaskQueueの要素

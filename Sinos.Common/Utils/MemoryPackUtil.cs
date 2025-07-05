@@ -1,7 +1,7 @@
 ﻿using MemoryPack;
 using MemoryPack.Compression;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 public static class MemoryPackUtil
 {

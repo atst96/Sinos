@@ -6,11 +6,11 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
-using Quark.DependencyInjection;
-using Quark.ViewModels;
-using Quark.Views;
+using Sinos.DependencyInjection;
+using Sinos.ViewModels;
+using Sinos.Views;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Prototype]
 public class DialogService

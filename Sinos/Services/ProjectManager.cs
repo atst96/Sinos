@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Quark.DependencyInjection;
+using Sinos.DependencyInjection;
 using MusicXml;
-using Quark.Projects;
-using Quark.ViewModels;
+using Sinos.Projects;
+using Sinos.ViewModels;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 /// <summary>
 /// プロジェクト管理クラス

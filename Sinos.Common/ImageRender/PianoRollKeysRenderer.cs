@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 internal class PianoRollKeysRenderer
 {

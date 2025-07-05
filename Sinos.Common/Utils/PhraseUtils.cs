@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
-using Quark.Projects.Tracks;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 public static class PhraseUtils
 {
     /// <summary>

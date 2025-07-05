@@ -1,4 +1,4 @@
-﻿namespace Quark.Data.Projects;
+﻿namespace Sinos.Data.Projects;
 
 public record ProgressReport(
     ProgressReportType ReprotType,

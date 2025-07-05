@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Quark.Components;
-using Quark.Constants;
-using Quark.Converters;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+using Sinos.Components;
+using Sinos.Constants;
+using Sinos.Converters;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 
-namespace Quark.Models.Neutrino;
+namespace Sinos.Models.Neutrino;
 
 internal class NeutrinoV2Phrase : INeutrinoPhrase, IF0Phrase<float>, IMspecDynamicsPhrase<float>
 {

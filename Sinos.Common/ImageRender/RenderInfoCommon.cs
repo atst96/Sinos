@@ -1,9 +1,9 @@
-﻿using Quark.Controls;
-using Quark.Controls.Editing;
-using Quark.Drawing;
-using Quark.Projects.Tracks;
+﻿using Sinos.Controls;
+using Sinos.Controls.Editing;
+using Sinos.Drawing;
+using Sinos.Projects.Tracks;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class RenderInfoCommon
 {

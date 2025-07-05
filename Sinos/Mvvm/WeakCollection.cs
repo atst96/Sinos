@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Quark.Mvvm;
+namespace Sinos.Mvvm;
 
 internal class WeakCollection<T> : ICollection<WeakReference<T>> where T : class
 {

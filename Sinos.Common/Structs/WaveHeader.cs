@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Quark.Structs;
+namespace Sinos.Structs;
 
 /// <summary>
 /// WAVヘッダの構造体

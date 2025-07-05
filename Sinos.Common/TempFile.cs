@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using Microsoft.Win32.SafeHandles;
-using Quark.Compatibles.Windows;
-using Quark.Utils;
+using Sinos.Compatibles.Windows;
+using Sinos.Utils;
 using FwPath = System.IO.Path;
 
-namespace Quark;
+namespace Sinos;
 
 /// <summary>
 /// 一時フォルダを使用して他のプロセスへファイルを連携するためのクラス。<br /><br />
@@ -14,7 +14,7 @@ namespace Quark;
 public class TempFile : FileStream, IDisposable
 {
     /// <summary>ファイル名の接頭辞</summary>
-    private static readonly string _prefix = $"Quark_{AppInstance.Instance.Id}";
+    private static readonly string _prefix = $"Sinos_{AppInstance.Instance.Id}";
 
     /// <summary>ファイルパス</summary>
     public string Path { get; }

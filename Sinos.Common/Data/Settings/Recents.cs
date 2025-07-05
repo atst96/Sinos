@@ -1,6 +1,6 @@
 ﻿using MemoryPack;
 
-namespace Quark.Data.Settings;
+namespace Sinos.Data.Settings;
 
 /// <summary>
 /// 直近に選択した値を保持する

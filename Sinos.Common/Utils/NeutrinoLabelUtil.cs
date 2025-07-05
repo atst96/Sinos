@@ -1,10 +1,10 @@
-﻿using Quark.Extensions;
-using Quark.Models.Neutrino;
+﻿using Sinos.Extensions;
+using Sinos.Models.Neutrino;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// NEUTRINOのラベル処理に関するUtil

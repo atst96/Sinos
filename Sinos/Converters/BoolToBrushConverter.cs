@@ -3,7 +3,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace Quark.Converters;
+namespace Sinos.Converters;
 
 internal class BoolToBrushConverter : IValueConverter
 {

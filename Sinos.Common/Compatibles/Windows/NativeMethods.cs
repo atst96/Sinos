@@ -2,7 +2,7 @@
 using System.Runtime.Versioning;
 using Microsoft.Win32.SafeHandles;
 
-namespace Quark.Compatibles.Windows;
+namespace Sinos.Compatibles.Windows;
 
 // TODO: P/Invoke部分をLibraryImportかCsWin32辺りに置き換える
 internal static class NativeMethods

@@ -1,8 +1,8 @@
 ﻿using MusicXml;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 
-namespace Quark.Extensions;
+namespace Sinos.Extensions;
 
 public static class TrackExtensions
 {

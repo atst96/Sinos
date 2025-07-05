@@ -1,4 +1,4 @@
-﻿namespace Quark.Services;
+﻿namespace Sinos.Services;
 
 /// <summary>
 /// 推論処理の優先度

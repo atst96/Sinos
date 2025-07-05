@@ -2,7 +2,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Quark.Converters;
+namespace Sinos.Converters;
 
 internal class DebugConverter : IValueConverter
 {

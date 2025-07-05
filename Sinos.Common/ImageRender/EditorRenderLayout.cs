@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using Quark.ImageRender;
+using Sinos.ImageRender;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 /// <summary>
 /// 音響情報を描画するための情報。

@@ -1,4 +1,4 @@
-﻿namespace Quark.Projects.Neutrino;
+﻿namespace Sinos.Projects.Neutrino;
 
 public class AudioFeaturesV2
 {

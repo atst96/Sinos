@@ -3,25 +3,25 @@ using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Threading;
-using Quark.Constants;
-using Quark.ImageRender;
-using Quark.Projects.Tracks;
+using Sinos.Constants;
+using Sinos.ImageRender;
+using Sinos.Projects.Tracks;
 using Avalonia;
-using Quark.Drawing;
+using Sinos.Drawing;
 using Avalonia.Input;
-using Quark.Controls.Editing;
-using Quark.Utils;
+using Sinos.Controls.Editing;
+using Sinos.Utils;
 using System.Diagnostics;
 using System.Linq;
-using Quark.Converters;
-using static Quark.Controls.EditorRenderLayout;
+using Sinos.Converters;
+using static Sinos.Controls.EditorRenderLayout;
 using System.Runtime.CompilerServices;
 using System.Numerics;
-using Quark.Extensions;
+using Sinos.Extensions;
 using SkiaSharp;
 using Avalonia.Media;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 public partial class PlotEditor : UserControl
 {
     private double MaxHScrollHeight = 1000;

@@ -3,12 +3,12 @@ using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using MusicXml;
-using Quark.Models.Neutrino;
-using Quark.Mvvm;
-using Quark.Services;
-using Quark.UI.Mvvm;
+using Sinos.Models.Neutrino;
+using Sinos.Mvvm;
+using Sinos.Services;
+using Sinos.UI.Mvvm;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 /// <summary>
 /// <see cref="MusicXMLImportWindow"/>のViewModel

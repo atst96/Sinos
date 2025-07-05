@@ -1,6 +1,6 @@
-﻿using Quark.Utils;
+﻿using Sinos.Utils;
 
-namespace Quark.Share.Test;
+namespace Sinos.Share.Test;
 
 public class CommandLineArgsBuilderTest
 {

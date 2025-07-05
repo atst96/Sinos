@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface IF0Phrase<T> : INeutrinoPhrase
     where T : IFloatingPointIeee754<T>

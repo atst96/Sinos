@@ -1,8 +1,8 @@
 ﻿using NAudio.Wave;
-using Quark.Data.Projects.Tracks;
-using Quark.Projects.Tracks.Base;
+using Sinos.Data.Projects.Tracks;
+using Sinos.Projects.Tracks.Base;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 internal class AudioFileTrack : AudioTrackBase
 {

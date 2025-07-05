@@ -1,6 +1,6 @@
-﻿using Quark.Models.Neutrino;
+﻿using Sinos.Models.Neutrino;
 
-namespace Quark.Neutrino;
+namespace Sinos.Neutrino;
 
 public class NeutrinoV2Option
 {

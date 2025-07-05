@@ -1,8 +1,8 @@
-﻿using Quark.DependencyInjection;
-using Quark.Factories;
-using Quark.Projects;
+﻿using Sinos.DependencyInjection;
+using Sinos.Factories;
+using Sinos.Projects;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Singleton]
 internal class ProjectService

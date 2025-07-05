@@ -1,4 +1,4 @@
-﻿namespace Quark.Models.Neutrino;
+﻿namespace Sinos.Models.Neutrino;
 
 /// <summary>
 /// ラベル情報

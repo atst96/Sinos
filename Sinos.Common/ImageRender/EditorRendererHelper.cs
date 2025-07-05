@@ -1,6 +1,6 @@
-﻿using Quark.Projects.Tracks;
+﻿using Sinos.Projects.Tracks;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public static class EditorRendererHelper
 {

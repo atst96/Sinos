@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// 計算に関するユーティリティクラス

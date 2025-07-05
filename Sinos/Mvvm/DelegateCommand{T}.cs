@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quark.Mvvm;
+namespace Sinos.Mvvm;
 
 public class DelegateCommand<T> : Command<T>
 {

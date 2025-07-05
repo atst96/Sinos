@@ -1,4 +1,4 @@
-﻿namespace Quark.Drawing;
+﻿namespace Sinos.Drawing;
 
 /// <summary>
 /// 縦線の種別

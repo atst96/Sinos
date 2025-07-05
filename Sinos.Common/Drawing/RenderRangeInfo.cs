@@ -1,4 +1,4 @@
-﻿namespace Quark.Drawing;
+﻿namespace Sinos.Drawing;
 
 public class RenderRangeInfo(int BeginTime, int EndTime, int OffsetFrames, int FramesCount)
 {

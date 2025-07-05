@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 public partial class ValueSelectorViewModel<T> : ObservableObject
     where T : notnull

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using Quark.Components;
+using Sinos.Components;
 
-namespace Quark.Share.Test.Components;
+namespace Sinos.Share.Test.Components;
 
 public class NotificationObjectTest
 {

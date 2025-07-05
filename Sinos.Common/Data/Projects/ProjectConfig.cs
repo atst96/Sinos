@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using MemoryPack;
-using Quark.Data.Projects.Tracks;
+using Sinos.Data.Projects.Tracks;
 
-namespace Quark.Data.Project;
+namespace Sinos.Data.Project;
 
 [MemoryPackable]
 internal partial class ProjectConfig

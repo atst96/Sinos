@@ -1,13 +1,13 @@
 ﻿using System.Collections.ObjectModel;
 using System.Text;
-using Quark.Data.Projects.Tracks;
+using Sinos.Data.Projects.Tracks;
 using MusicXml;
-using Quark.Models.Neutrino;
-using Quark.Projects.Tracks;
-using Quark.Services;
-using Quark.Utils;
+using Sinos.Models.Neutrino;
+using Sinos.Projects.Tracks;
+using Sinos.Services;
+using Sinos.Utils;
 
-namespace Quark.Projects;
+namespace Sinos.Projects;
 
 internal class TrackCollection : ObservableCollection<TrackBase>
 {

@@ -1,4 +1,4 @@
-﻿namespace Quark.Extensions;
+﻿namespace Sinos.Extensions;
 
 /// <summary>
 /// コレクションに関する拡張メソッド

@@ -1,8 +1,8 @@
-﻿using Quark.Controls;
-using Quark.Drawing;
+﻿using Sinos.Controls;
+using Sinos.Drawing;
 using SkiaSharp;
 
-namespace Quark.ImageRender.Parts;
+namespace Sinos.ImageRender.Parts;
 internal class RulerRenderer
 {
     public RulerRenderer()

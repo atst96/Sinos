@@ -1,6 +1,6 @@
-﻿using Quark.Services;
+﻿using Sinos.Services;
 
-namespace Quark.UI.Mvvm;
+namespace Sinos.UI.Mvvm;
 internal interface IDialogServiceViewModel
 {
     /// <summary>DialogService</summary>

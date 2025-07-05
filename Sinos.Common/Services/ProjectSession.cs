@@ -1,17 +1,17 @@
-﻿using Quark.Components;
-using Quark.Constants;
-using Quark.Data.Settings;
-using Quark.DependencyInjection;
-using Quark.Models.Neutrino;
-using Quark.Neutrino;
-using Quark.Projects;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+﻿using Sinos.Components;
+using Sinos.Constants;
+using Sinos.Data.Settings;
+using Sinos.DependencyInjection;
+using Sinos.Models.Neutrino;
+using Sinos.Neutrino;
+using Sinos.Projects;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Singleton]
 internal class ProjectSession

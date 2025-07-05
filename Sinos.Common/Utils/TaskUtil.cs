@@ -1,4 +1,4 @@
-﻿namespace Quark.Utils;
+﻿namespace Sinos.Utils;
 
 /// <summary>
 /// Task操作に関するUtilクラス

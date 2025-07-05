@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 public class NativeRenderPanel : Decorator
 {

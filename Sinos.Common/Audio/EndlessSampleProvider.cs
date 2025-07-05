@@ -1,6 +1,6 @@
 ﻿using NAudio.Wave;
 
-namespace Quark.Audio;
+namespace Sinos.Audio;
 
 /// <summary>
 /// 音声データをエンドレスに読み取るためのSampleProviderラッパー

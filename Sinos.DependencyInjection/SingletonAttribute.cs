@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Quark.DependencyInjection;
+namespace Sinos.DependencyInjection;
 
 /// <summary>
 /// Singletonで登録する

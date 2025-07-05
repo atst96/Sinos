@@ -1,4 +1,4 @@
-﻿namespace Quark.Constants;
+﻿namespace Sinos.Constants;
 
 /// <summary>
 /// NEUTRINO共通設定

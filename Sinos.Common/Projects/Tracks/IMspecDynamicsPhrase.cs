@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface IMspecDynamicsPhrase<T> : INeutrinoPhrase
     where T : IFloatingPointIeee754<T>

@@ -1,6 +1,6 @@
-﻿using Quark.Models.Scores;
+﻿using Sinos.Models.Scores;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class TrackScoreInfo
 {

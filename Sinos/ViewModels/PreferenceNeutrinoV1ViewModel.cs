@@ -1,10 +1,10 @@
-﻿using Quark.Data.Settings;
-using Quark.Mvvm;
-using Quark.Services;
+﻿using Sinos.Data.Settings;
+using Sinos.Mvvm;
+using Sinos.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
 
-namespace Quark.ViewModels;
+namespace Sinos.ViewModels;
 
 internal partial class PreferenceNeutrinoV1ViewModel : ViewModelBase
 {

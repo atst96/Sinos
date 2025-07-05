@@ -1,11 +1,11 @@
-﻿using Quark.Data;
-using Quark.DependencyInjection;
-using Quark.Factories;
+﻿using Sinos.Data;
+using Sinos.DependencyInjection;
+using Sinos.Factories;
 using MusicXml;
-using Quark.Projects;
-using Quark.ViewModels;
+using Sinos.Projects;
+using Sinos.ViewModels;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Singleton]
 internal class ProjectFactory(ProjectSessionFactory sessionFactory)

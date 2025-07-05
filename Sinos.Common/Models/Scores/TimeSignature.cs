@@ -1,4 +1,4 @@
-﻿namespace Quark.Models.Scores;
+﻿namespace Sinos.Models.Scores;
 
 /// <summary>
 /// 拍子記号情報

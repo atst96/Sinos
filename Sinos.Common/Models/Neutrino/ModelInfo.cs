@@ -1,6 +1,6 @@
-﻿using Quark.Data;
+﻿using Sinos.Data;
 
-namespace Quark.Models.Neutrino;
+namespace Sinos.Models.Neutrino;
 
 /// <summary>
 /// Neutrinoのモデル情報

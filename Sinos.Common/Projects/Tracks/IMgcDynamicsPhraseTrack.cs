@@ -1,7 +1,7 @@
 ﻿using System.Numerics;
-using Quark.Projects.Tracks;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 public interface IMgcDynamicsPhraseTrack<TPhrase, TNumber>
     where TPhrase : IMgcDynamicsPhrase<TNumber>

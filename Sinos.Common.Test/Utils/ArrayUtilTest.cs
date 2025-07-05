@@ -1,6 +1,6 @@
-﻿using Quark.Utils;
+﻿using Sinos.Utils;
 
-namespace Quark.Share.Test.Utils;
+namespace Sinos.Share.Test.Utils;
 
 /// <summary>
 /// Test class for <see cref="ArrayUtil"/>.

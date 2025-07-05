@@ -4,16 +4,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="using:Avalonia.Xaml.Interactivity"
         xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
-        xmlns:vm="using:Quark.ViewModels"
-        xmlns:behavior="using:Quark.Behaviors"
+        xmlns:vm="using:Sinos.ViewModels"
+        xmlns:behavior="using:Sinos.Behaviors"
         mc:Ignorable="d"
-        x:Class="Quark.Views.PreferenceWindow"
+        x:Class="Sinos.Views.PreferenceWindow"
         Title="アプリケーション設定" Height="450" Width="800"
         x:DataType="vm:PreferenceWindowViewModel"
         behavior:ViewModelLocator.Type="{x:Type vm:PreferenceWindowViewModel}"
         behavior:ViewModelLocator.DisposeDataContextOnWindowClosed="True"
         WindowStartupLocation="CenterOwner" CanResize="False"  ShowInTaskbar="False"
-        xmlns:qcomponent="using:Quark.Components"
+        xmlns:qcomponent="using:Sinos.Components"
         FontFamily="Meiryo UI">
     <i:Interaction.Behaviors>
         <ia:EventTriggerBehavior EventName="Closing">

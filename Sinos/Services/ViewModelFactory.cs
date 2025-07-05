@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using Quark.DependencyInjection;
+using Sinos.DependencyInjection;
 using MusicXml;
-using Quark.Projects;
-using Quark.Projects.Tracks;
-using Quark.ViewModels;
+using Sinos.Projects;
+using Sinos.Projects.Tracks;
+using Sinos.ViewModels;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Singleton]
 internal class ViewModelFactory

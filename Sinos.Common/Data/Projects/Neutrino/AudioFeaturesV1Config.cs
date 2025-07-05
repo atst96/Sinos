@@ -1,9 +1,9 @@
 ﻿using MemoryPack;
-using Quark.Components;
-using Quark.Data.Settings;
-using Quark.Models.Neutrino;
+using Sinos.Components;
+using Sinos.Data.Settings;
+using Sinos.Models.Neutrino;
 
-namespace Quark.Data.Projects.Neutrino;
+namespace Sinos.Data.Projects.Neutrino;
 
 [MemoryPackable]
 public partial class AudioFeaturesV1Config

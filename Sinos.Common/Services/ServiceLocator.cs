@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Quark.DependencyInjection;
+using Sinos.DependencyInjection;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 /// <summary>
 /// サービスロケータ
@@ -23,7 +23,7 @@ public static class ServiceLocator
 
         var serviceCollection = new ServiceCollection();
 
-        // 共有プロジェクト(Quark.Shard)のDI登録
+        // 共有プロジェクト(Sinos.Common)のDI登録
         serviceCollection.RegisterContext();
 
         // 任意プロジェクトのDI登録

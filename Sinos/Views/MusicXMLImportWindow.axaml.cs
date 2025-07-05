@@ -1,7 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
 
-namespace Quark.Views;
+namespace Sinos.Views;
 
 public partial class MusicXMLImportWindow : Window
 {

@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace Quark.ImageRender.PianoRoll;
+namespace Sinos.ImageRender.PianoRoll;
 
 public class TimingRenderer
 {

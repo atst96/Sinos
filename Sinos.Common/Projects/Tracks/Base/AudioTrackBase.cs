@@ -1,8 +1,8 @@
 ﻿using NAudio.Wave;
-using Quark.Audio;
-using Quark.Data.Projects.Tracks;
+using Sinos.Audio;
+using Sinos.Data.Projects.Tracks;
 
-namespace Quark.Projects.Tracks.Base;
+namespace Sinos.Projects.Tracks.Base;
 
 /// <summary>
 /// 音声出力トラックの基底クラス

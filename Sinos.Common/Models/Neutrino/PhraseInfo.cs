@@ -1,6 +1,6 @@
 ﻿using MemoryPack;
 
-namespace Quark.Models.Neutrino;
+namespace Sinos.Models.Neutrino;
 
 [MemoryPackable]
 public partial class PhraseInfo

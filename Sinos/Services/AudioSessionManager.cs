@@ -1,8 +1,8 @@
 ﻿using NAudio.CoreAudioApi;
 using NAudio.Wave;
-using Quark.DependencyInjection;
+using Sinos.DependencyInjection;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 /// <summary>
 /// オーディオ関連の管理クラス<br />

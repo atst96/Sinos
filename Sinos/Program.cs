@@ -2,7 +2,7 @@
 
 using Avalonia;
 
-namespace Quark.Windows;
+namespace Sinos.Windows;
 
 internal class Program
 {

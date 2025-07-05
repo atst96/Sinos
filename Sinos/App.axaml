@@ -1,9 +1,9 @@
-<Application x:Class="Quark.App"
+<Application x:Class="Sinos.App"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:conv="using:Quark.Converters"
-             xmlns:app="using:Quark"
-             xmlns:ctrl="using:Quark.Controls"
+             xmlns:conv="using:Sinos.Converters"
+             xmlns:app="using:Sinos"
+             xmlns:ctrl="using:Sinos.Controls"
              xmlns:sys="using:System"
              RequestedThemeVariant="Default">
     <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->

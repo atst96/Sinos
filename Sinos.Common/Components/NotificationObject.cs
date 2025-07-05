@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Quark.Components;
+namespace Sinos.Components;
 
 /// <summary>
 /// 通知可能オブジェクト

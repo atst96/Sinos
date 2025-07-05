@@ -1,8 +1,8 @@
-﻿using Quark.Models.Neutrino;
-using Quark.Projects.Tracks;
+﻿using Sinos.Models.Neutrino;
+using Sinos.Projects.Tracks;
 using SkiaSharp;
 
-namespace Quark.Constants;
+namespace Sinos.Constants;
 
 /// <summary>
 /// タイミング調整用のハンドル

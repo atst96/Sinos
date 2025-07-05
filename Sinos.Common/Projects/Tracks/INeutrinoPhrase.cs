@@ -1,7 +1,7 @@
-﻿using Quark.Components;
-using Quark.Models.Neutrino;
+﻿using Sinos.Components;
+using Sinos.Models.Neutrino;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface INeutrinoPhrase
 {

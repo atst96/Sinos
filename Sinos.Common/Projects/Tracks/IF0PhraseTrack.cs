@@ -1,6 +1,6 @@
 ﻿using System.Numerics;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 public interface IF0PhraseTrack<TPhrase, TNumber>
     where TPhrase : IF0Phrase<TNumber>

@@ -1,9 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
-using Quark.Drawing;
+using Sinos.Drawing;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 public class PianoRollRuler : Control
 {

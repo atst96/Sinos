@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Xml.Serialization;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// XMLデータの関するUtilクラス

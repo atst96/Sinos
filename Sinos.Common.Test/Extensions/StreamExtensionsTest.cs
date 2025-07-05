@@ -1,7 +1,7 @@
 ﻿using System.Text;
-using Quark.Extensions;
+using Sinos.Extensions;
 
-namespace Quark.Share.Test.Extensions;
+namespace Sinos.Share.Test.Extensions;
 
 /// <summary>
 /// <see cref="StreamExtensions"/>のテスト

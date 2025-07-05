@@ -1,4 +1,4 @@
-﻿namespace Quark.Controls.Editing;
+﻿namespace Sinos.Controls.Editing;
 
 public class PitchSeekingInfo(int BeginTime, int EndTime, double Pitch) : IEditInfo
 {

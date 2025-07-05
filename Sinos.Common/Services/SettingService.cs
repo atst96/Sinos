@@ -1,9 +1,9 @@
 ﻿using MemoryPack;
-using Quark.Data.Settings;
-using Quark.DependencyInjection;
-using Quark.Utils;
+using Sinos.Data.Settings;
+using Sinos.DependencyInjection;
+using Sinos.Utils;
 
-namespace Quark.Services;
+namespace Sinos.Services;
 
 [Singleton]
 internal class SettingService

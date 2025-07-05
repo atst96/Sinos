@@ -2,7 +2,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Quark.Converters;
+namespace Sinos.Converters;
 
 public class DoubleArithmeticConverter : IValueConverter
 {

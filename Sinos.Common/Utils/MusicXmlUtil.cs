@@ -5,10 +5,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using MusicXml;
 using MusicXml.NoteElements;
-using Quark.Models;
-using Quark.Models.Scores;
+using Sinos.Models;
+using Sinos.Models.Scores;
 
-namespace Quark.Utils;
+namespace Sinos.Utils;
 
 /// <summary>
 /// MusicXMLファイルの処理に関するUtil
@@ -256,7 +256,7 @@ public static class MusicXmlUtil
             Version = "4.0",
             Identification = new()
             {
-                Encoding = new() { Software = "Quark", EncodingDate = DateTime.Now }
+                Encoding = new() { Software = "Sinos", EncodingDate = DateTime.Now }
             },
             PartList = new()
             {

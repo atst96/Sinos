@@ -1,4 +1,4 @@
-﻿namespace Quark.Data.Projects;
+﻿namespace Sinos.Data.Projects;
 public enum ProgressReportType
 {
     Idertimate,

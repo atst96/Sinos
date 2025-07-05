@@ -1,7 +1,7 @@
 ﻿using System.IO.Pipes;
-using Quark.Utils;
+using Sinos.Utils;
 
-namespace Quark;
+namespace Sinos;
 
 using FwPath = Path;
 
@@ -12,7 +12,7 @@ using FwPath = Path;
 public class PipeFile : Stream
 {
     /// <summary>接尾辞</summary>
-    private static readonly string _prefix = $"Quark_{AppInstance.Instance.Id}";
+    private static readonly string _prefix = $"Sinos_{AppInstance.Instance.Id}";
 
     /// <summary>パイプのパスの接頭辞</summary>
     private static readonly string _pipePathPrefix = OperatingSystem.IsWindows() ? @"\\.\pipe\" : @"/tmp/";

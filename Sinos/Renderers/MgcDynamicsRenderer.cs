@@ -1,9 +1,9 @@
 ﻿using System.Numerics;
 using Avalonia.Media;
-using Quark.ImageRender;
-using Quark.Projects.Tracks;
+using Sinos.ImageRender;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Renderers;
+namespace Sinos.Renderers;
 
 internal class MgcDynamicsRenderer<TPhrase, TNumber> : DynamicsRenderer
     where TPhrase : IMgcDynamicsPhrase<TNumber>

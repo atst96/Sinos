@@ -1,7 +1,7 @@
-﻿using Quark.Drawing;
-using Quark.Projects.Tracks;
+﻿using Sinos.Drawing;
+using Sinos.Projects.Tracks;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 internal class TrackRenderInfo
 {

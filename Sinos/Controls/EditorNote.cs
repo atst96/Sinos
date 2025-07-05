@@ -4,10 +4,10 @@ using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
 using Avalonia.Media;
-using Quark.Models;
+using Sinos.Models;
 using SkiaSharp;
 
-namespace Quark.Controls;
+namespace Sinos.Controls;
 
 public class EditorNote : TemplatedControl
 {

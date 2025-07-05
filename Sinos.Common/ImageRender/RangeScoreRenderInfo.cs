@@ -1,8 +1,8 @@
-﻿using Quark.Constants;
-using Quark.Drawing;
-using Quark.Models.Scores;
+﻿using Sinos.Constants;
+using Sinos.Drawing;
+using Sinos.Models.Scores;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class RangeScoreRenderInfo
 {

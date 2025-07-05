@@ -1,8 +1,8 @@
-﻿using Quark.Controls;
+﻿using Sinos.Controls;
 using System.Runtime.CompilerServices;
 using SkiaSharp;
 
-namespace Quark.ImageRender;
+namespace Sinos.ImageRender;
 
 public class ScoreImageRender
 {

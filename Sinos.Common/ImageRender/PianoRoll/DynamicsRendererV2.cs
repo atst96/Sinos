@@ -1,12 +1,12 @@
-﻿using Quark.Compatibles;
+﻿using Sinos.Compatibles;
 using System.Runtime.InteropServices;
-using Quark.Projects.Tracks;
-using Quark.Utils;
+using Sinos.Projects.Tracks;
+using Sinos.Utils;
 using SkiaSharp;
-using Quark.Extensions;
+using Sinos.Extensions;
 using System.Runtime.CompilerServices;
 
-namespace Quark.ImageRender.Score;
+namespace Sinos.ImageRender.Score;
 
 /// <summary>
 /// 音量を描画する

@@ -1,6 +1,6 @@
-﻿using Quark.Audio;
+﻿using Sinos.Audio;
 
-namespace Quark.Projects.Tracks;
+namespace Sinos.Projects.Tracks;
 
 /// <summary>
 /// 音声出力トラック
