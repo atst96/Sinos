@@ -5,7 +5,7 @@
     <LangVersion>preview</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RootNamespace>Quark</RootNamespace>
+    <RootNamespace>Sinos</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MusicXml\MusicXml.csproj" />
-    <ProjectReference Include="..\Quark.DependencyInjection\Quark.DependencyInjection.csproj" />
+    <ProjectReference Include="..\Sinos.Common.MusicXml\Sinos.Common.MusicXml.csproj" />
+    <ProjectReference Include="..\Sinos.DependencyInjection\Sinos.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

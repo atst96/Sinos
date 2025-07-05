@@ -1,4 +1,4 @@
 ﻿using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("Quark")]
+[assembly: InternalsVisibleTo("Sinos")]
 [assembly: InternalsVisibleTo("Quark.Prototype")]

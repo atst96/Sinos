@@ -14,13 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark.Share", "Quark.Share\Quark.Share.csproj", "{C57847F1-EA63-4A48-BE04-1344A2AFF81D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinos.Share", "Sinos.Common\Sinos.Common.csproj", "{C57847F1-EA63-4A48-BE04-1344A2AFF81D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark.Share.Test", "Quark.Share.Test\Quark.Share.Test.csproj", "{2CAD97A5-CB18-470A-8860-C5FBA16FB1AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinos.Share.Test", "Sinos.Common.Test\Sinos.Common.Test.csproj", "{2CAD97A5-CB18-470A-8860-C5FBA16FB1AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark.DependencyInjection", "Quark.DependencyInjection\Quark.DependencyInjection.csproj", "{9FDBF8B9-F751-4EE9-AB45-F159D1213649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinos.DependencyInjection", "Sinos.DependencyInjection\Sinos.DependencyInjection.csproj", "{9FDBF8B9-F751-4EE9-AB45-F159D1213649}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quark", "Quark\Quark.csproj", "{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sinos", "Sinos\Sinos.csproj", "{9F016FEE-0352-4F2E-91B5-C6FD53AFA3AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicXmlAnalyzer", "MusicXmlAnalyzer\MusicXmlAnalyzer.csproj", "{EE2CCA72-9627-4710-9A29-7F52C5F31615}"
 EndProject
