@@ -1,10 +1,8 @@
-﻿using Sinos.DependencyInjection;
-using Sinos.Projects;
+﻿using Sinos.Projects;
 using Sinos.Services;
 
 namespace Sinos.Factories;
 
-[Singleton]
 internal class ProjectSessionFactory
 {
     private NeutrinoV1Service _v1Service;

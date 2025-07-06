@@ -10,7 +10,6 @@ using CommunityToolkit.Mvvm.Input;
 using Sinos.Components;
 using Sinos.Controls;
 using Sinos.Data.Settings;
-using Sinos.DependencyInjection;
 using Sinos.Drawing;
 using MusicXml;
 using Sinos.Mvvm;
@@ -23,7 +22,6 @@ using Sinos.Utils;
 
 namespace Sinos.ViewModels;
 
-[Prototype]
 internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewModel
 {
     /// <inheritdoc/>

@@ -1,6 +1,5 @@
 ﻿using NAudio.CoreAudioApi;
 using NAudio.Wave;
-using Sinos.DependencyInjection;
 
 namespace Sinos.Services;
 
@@ -8,7 +7,6 @@ namespace Sinos.Services;
 /// オーディオ関連の管理クラス<br />
 /// TODO: デバイス変更時の通知処理もここで行う
 /// </summary>
-[Singleton]
 internal class AudioSessionManager()
 {
     /// <summary>オーディオデバイスを取得する</summary>

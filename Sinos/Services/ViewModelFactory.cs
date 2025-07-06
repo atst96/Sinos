@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
-using Sinos.DependencyInjection;
 using MusicXml;
 using Sinos.Projects;
 using Sinos.Projects.Tracks;
@@ -9,7 +8,6 @@ using Sinos.ViewModels;
 
 namespace Sinos.Services;
 
-[Singleton]
 internal class ViewModelFactory
 {
     private readonly NeutrinoV1Service _v1Service;

@@ -1,11 +1,9 @@
 ﻿using MemoryPack;
 using Sinos.Data.Settings;
-using Sinos.DependencyInjection;
 using Sinos.Utils;
 
 namespace Sinos.Services;
 
-[Singleton]
 internal class SettingService
 {
     private readonly string _path;

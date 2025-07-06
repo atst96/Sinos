@@ -4,9 +4,10 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Sinos.Views;
-using Sinos.DependencyInjection;
 using Sinos.Services;
 using Avalonia.Controls;
+using Microsoft.Extensions.DependencyInjection;
+using Sinos.ViewModels;
 
 namespace Sinos;
 
@@ -18,8 +19,23 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
-        // ServiceLocatorwを初期化
-        ServiceLocator.Initialize(sc => sc.RegisterContext());
+
+        // ServiceLocatorを初期化
+        ServiceLocator.Initialize(services =>
+        {
+            services
+                // Services
+                .AddSingleton<AudioSessionManager>()
+                .AddTransient<DialogService>()
+                .AddSingleton<ProjectFactory>()
+                .AddSingleton<ProjectManager>()
+                .AddSingleton<ViewModelFactory>()
+                // ViewModels
+                .AddTransient<MainWindowViewModel>()
+                .AddTransient<PreferenceWindowViewModel>()
+                .AddTransient<ProgressWindowViewModel>()
+            ;
+        });
     }
 
     public override void OnFrameworkInitializationCompleted()

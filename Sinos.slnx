@@ -9,5 +9,4 @@
         <File Path="README.md" />
     </Folder>
     <project Path="Sinos.Common.MusicXml\Sinos.Common.MusicXml.csproj" />
-    <project Path="Sinos.DependencyInjection\Sinos.DependencyInjection.csproj" />
 </Solution>

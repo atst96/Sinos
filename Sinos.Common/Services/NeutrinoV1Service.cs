@@ -6,7 +6,6 @@ using Sinos.Constants;
 using Sinos.Data;
 using Sinos.Data.Projects;
 using Sinos.Data.Settings;
-using Sinos.DependencyInjection;
 using Sinos.Extensions;
 using Sinos.Models.Neutrino;
 using Sinos.Neutrino;
@@ -19,7 +18,6 @@ namespace Sinos.Services;
 /// NEUTRINO(v1)を操作するためのサービス
 /// TODO: NSFの処理が一部未実装
 /// </summary>
-[Singleton]
 internal class NeutrinoV1Service
 {
     /// <summary>設定情報</summary>

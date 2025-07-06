@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Sinos.Common.MusicXml\Sinos.Common.MusicXml.csproj" />
-    <ProjectReference Include="..\Sinos.DependencyInjection\Sinos.DependencyInjection.csproj" />
   </ItemGroup>
 
 </Project>

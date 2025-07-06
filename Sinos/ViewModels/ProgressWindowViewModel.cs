@@ -1,14 +1,12 @@
 ﻿using System;
 using Avalonia.Threading;
 using Sinos.Data.Projects;
-using Sinos.DependencyInjection;
 using Sinos.Mvvm;
 using Sinos.Services;
 using Sinos.UI.Mvvm;
 
 namespace Sinos.ViewModels;
 
-[Prototype]
 internal class ProgressWindowViewModel : ViewModelBase, IDialogServiceViewModel, IProgress<ProgressReport>
 {
     public DialogService DialogService { get; }

@@ -6,13 +6,11 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
-using Sinos.DependencyInjection;
 using Sinos.ViewModels;
 using Sinos.Views;
 
 namespace Sinos.Services;
 
-[Prototype]
 public class DialogService
 {
     private Window? _window;

@@ -1,7 +1,6 @@
 ﻿using Sinos.Components;
 using Sinos.Constants;
 using Sinos.Data.Settings;
-using Sinos.DependencyInjection;
 using Sinos.Models.Neutrino;
 using Sinos.Neutrino;
 using Sinos.Projects;
@@ -13,7 +12,6 @@ using System.Runtime.CompilerServices;
 
 namespace Sinos.Services;
 
-[Singleton]
 internal class ProjectSession
 {
     private Settings _settings;

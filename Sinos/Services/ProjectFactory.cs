@@ -1,5 +1,4 @@
 ﻿using Sinos.Data;
-using Sinos.DependencyInjection;
 using Sinos.Factories;
 using MusicXml;
 using Sinos.Projects;
@@ -7,7 +6,6 @@ using Sinos.ViewModels;
 
 namespace Sinos.Services;
 
-[Singleton]
 internal class ProjectFactory(ProjectSessionFactory sessionFactory)
 {
     private ProjectSessionFactory _sessionFactory = sessionFactory;

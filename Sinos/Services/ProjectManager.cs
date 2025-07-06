@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Sinos.DependencyInjection;
 using MusicXml;
 using Sinos.Projects;
 using Sinos.ViewModels;
@@ -10,7 +9,6 @@ namespace Sinos.Services;
 /// <summary>
 /// プロジェクト管理クラス
 /// </summary>
-[Singleton]
 internal class ProjectManager(ProjectFactory Factory, AudioSessionManager AudioManager)
 {
     private ProjectFactory _factory = Factory;

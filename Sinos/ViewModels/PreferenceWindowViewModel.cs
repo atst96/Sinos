@@ -2,7 +2,6 @@
 using Sinos.Mvvm;
 using Sinos.Services;
 using Sinos.Data.Settings;
-using Sinos.DependencyInjection;
 using Sinos.Components;
 using Sinos.UI.Mvvm;
 using System.ComponentModel;
@@ -11,7 +10,6 @@ using System.Collections.Immutable;
 
 namespace Sinos.ViewModels;
 
-[Prototype]
 internal partial class PreferenceWindowViewModel : ViewModelBase, IDialogServiceViewModel
 {
     private Settings _settings;

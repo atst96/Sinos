@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Sinos.DependencyInjection;
+using Sinos.Compatibles;
+using Sinos.Factories;
 
 namespace Sinos.Services;
 
@@ -34,6 +35,25 @@ public static class ServiceLocator
     }
 
     /// <summary>サービスを取得する</summary>
-    public static T GetService<T>() where T: class
+    public static T GetService<T>() where T : class
         => ServiceProvider.GetService<T>() ?? throw new Exception($"Type {typeof(T)} not found.");
+
+    /// <summary>
+    /// 共有プロジェクト(Sinos.Common)のサービスを登録
+    /// </summary>
+    /// <param name="services"></param>
+    private static T RegisterContext<T>(this T services) where T : IServiceCollection
+    {
+        services
+            // Services
+            .AddSingleton<NeutrinoV1Service>()
+            .AddSingleton<NeutrinoV2Service>()
+            .AddSingleton<ProjectService>()
+            .AddSingleton<ProjectSession>()
+            .AddSingleton<SettingService>()
+            // Factories
+            .AddSingleton<ProjectSessionFactory>();
+
+        return services;
+    }
 }
