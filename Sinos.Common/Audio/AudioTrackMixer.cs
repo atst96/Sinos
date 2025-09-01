@@ -112,7 +112,12 @@ public class AudioTrackMixer : ISampleProvider
         Interlocked.Exchange(ref this._readBytes, (long)(this.WaveFormat.AverageBytesPerSecond / 1000d * timeMs));
 
         foreach (var track in this.EnumerateAudioTracks())
-            track.AudioStream.Seek(timeMs);
+        {
+            if (track is IOffsetSeekableTrack offsetTrack)
+                track.AudioStream.Seek(timeMs - offsetTrack.Offset.TotalMilliseconds);
+            else
+                track.AudioStream.Seek(timeMs);
+        }
     }
 
     private static void AddOrUpdate<TKey, TValue>(IDictionary<TKey, TValue> sampleProviders, TKey key, TValue value)

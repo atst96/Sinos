@@ -29,7 +29,7 @@ internal abstract class AudioTrackBase : TrackBase, IAudioTrack
             if (this._isChanged)
                 this.ApplyVolume();
             else
-                this._volume = stream.Volume;
+                stream.Volume = this._volume;
 
             return stream;
         }

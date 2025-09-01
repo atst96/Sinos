@@ -59,10 +59,11 @@
         <MenuItem Header="終了(_X)" InputGesture="Alt+F4" />
       </MenuItem>
 
+      <MenuItem Header="表示(_V)">
+        <MenuItem Header="サイドバー" ToggleType="CheckBox" IsChecked="{Binding IsSidebarVisible, Mode=TwoWay}" />
+      </MenuItem>
+        
       <MenuItem Header="プロジェクト(_P)">
-        <MenuItem Header="音声トラックを追加／変更する" />
-        <MenuItem Header="音声トラックを削除する" />
-        <Separator />
         <MenuItem Header="トラックの音声を出力する" Command="{Binding ExportWaveCommand, Mode=OneTime}" />
       </MenuItem>
 
@@ -74,6 +75,8 @@
     <StackPanel Grid.Row="1" Orientation="Horizontal" Background="{DynamicResource Theme.Menu.BackgroundBrush}">
 
       <!--  歌声 -->
+      <ToggleButton Content="三" Width="32" IsChecked="{Binding IsSidebarVisible, Mode=TwoWay}" />
+        
       <Label Content="歌声:" VerticalAlignment="Center" />
       <TextBlock VerticalAlignment="Center" Width="140"
                  TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"
@@ -110,16 +113,75 @@
 
     <Grid Grid.Row="2">
 
-      <controls:PlotEditor
-          Name="Editor"
-          Focusable="True" IsTabStop="True" TabIndex="0"
-          IsAutoScroll="True" IsQuantizeSnapping="True" ScaleX="0.1"
-          Track="{Binding TrackViewModel.Track, Mode=OneWay}"
-          IsPlayMode="{Binding ProjectViewModel.IsPlaying, Mode=TwoWay}"
-          PlayingTime="{Binding ProjectViewModel.PlayingTime, Mode=TwoWay}"
-          SelectionTime="{Binding ProjectViewModel.SelectionTime, Mode=TwoWay}"
-          Quantize="{Binding SelectedQuantize, Mode=OneWay}"
-          EditMode="{Binding SelectedEditMode, Mode=OneWay}" />
+        <Grid ColumnDefinitions="Auto,*">
+
+            <Border Grid.Column="0" Width="240"
+                    Background="#EFEFEF"
+                    BorderBrush="#AAA" BorderThickness="0,0,1,0"
+                    IsVisible="{Binding IsSidebarVisible, Mode=OneWay}">
+
+                <ScrollViewer>
+
+                    <StackPanel IsVisible="{Binding HasProject, Mode=OneWay}">
+
+                        <!-- External file track -->
+                        <Label 
+                            Foreground="#FFF" FontWeight="Bold"
+                            Background="#888" BorderBrush="#AAA"  BorderThickness="1"
+                            Content="BGMトラック" />
+
+                        <StackPanel Margin="8">
+                            <TextBlock Text="ファイル:" Margin="0,4" />
+                            <Grid ColumnSpacing="4" ColumnDefinitions="*,Auto" Margin="0,4">
+                                <TextBlock Grid.Column="0"
+                                           VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                                           Text="{Binding AudioTrackViewModel.FileName}" ToolTip.Tip="{Binding AudioTrackViewModel.FilePath}" />
+                                <Button Grid.Column="1" Content="選択"
+                                        Command="{Binding SelectAudioTrackCommand, Mode=OneTime}"/>
+                            </Grid>
+
+                            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto"
+                                  Margin="0,4" ColumnSpacing="4" RowSpacing="4"
+                                  IsVisible="{Binding HasAudioFileTrack, Mode=OneWay}">
+
+                                <CheckBox Grid.Row="0" Grid.ColumnSpan="2"
+                                          Content="ミュート" Margin="0,4" Focusable="False"
+                                          IsChecked="{Binding AudioTrackViewModel.IsMute, Mode=TwoWay}" />
+
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="ボリューム:" />
+                                <Slider Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Left"
+                                        Minimum="0" Maximum="1" Value="{Binding AudioTrackViewModel.Volume, Mode=TwoWay}" />
+
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="開始位置(秒):"
+                                           VerticalAlignment="Center"/>
+                                <TextBox Grid.Row="2" Grid.Column="1"
+                                         Text="{Binding AudioTrackViewModel.Offset, Mode=TwoWay}" />
+
+                                <Button Content="削除" 
+                                        Grid.Row="3" Grid.ColumnSpan="2"
+                                        HorizontalAlignment="Right" Width="80"
+                                        Command="{Binding DeleteAudioTrackFileCommand, Mode=OneTime}"/>
+
+                            </Grid>
+                            
+                        </StackPanel>
+                    </StackPanel>
+
+                </ScrollViewer>
+                
+            </Border>
+            
+            <controls:PlotEditor
+                Name="Editor" Grid.Column="1"
+                Focusable="True" IsTabStop="True" TabIndex="0"
+                IsAutoScroll="True" IsQuantizeSnapping="True" ScaleX="0.1"
+                Track="{Binding TrackViewModel.Track, Mode=OneWay}"
+                IsPlayMode="{Binding ProjectViewModel.IsPlaying, Mode=TwoWay}"
+                PlayingTime="{Binding ProjectViewModel.PlayingTime, Mode=TwoWay}"
+                SelectionTime="{Binding ProjectViewModel.SelectionTime, Mode=TwoWay}"
+                Quantize="{Binding SelectedQuantize, Mode=OneWay}"
+                EditMode="{Binding SelectedEditMode, Mode=OneWay}" />
+        </Grid>
 
     </Grid>
 

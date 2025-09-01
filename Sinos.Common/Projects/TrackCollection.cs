@@ -6,6 +6,7 @@ using Sinos.Models.Neutrino;
 using Sinos.Projects.Tracks;
 using Sinos.Services;
 using Sinos.Utils;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Sinos.Projects;
 
@@ -75,5 +76,17 @@ internal class TrackCollection : ObservableCollection<TrackBase>
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// オーディオトラックを取得する
+    /// TODO: 将来的には複数トラック似た奥するため、本メソッドは廃止予定。
+    /// </summary>
+    /// <param name="track"></param>
+    /// <returns></returns>
+    public bool TryGetAudioFileTrack([NotNullWhen(true)] out AudioFileTrack? track)
+    {
+        track = this.OfType<AudioFileTrack>().SingleOrDefault();
+        return track != null;
     }
 }

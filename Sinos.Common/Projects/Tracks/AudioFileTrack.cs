@@ -4,28 +4,33 @@ using Sinos.Projects.Tracks.Base;
 
 namespace Sinos.Projects.Tracks;
 
-internal class AudioFileTrack : AudioTrackBase
+internal class AudioFileTrack : AudioTrackBase, IOffsetSeekableTrack
 {
-    private string _path;
-
     private WaveStream _waveStream;
+
+    /// <summary>ファイルパス</summary>
+    public string FilePath { get; }
+
+    /// <summary>開始位置</summary>
+    public TimeSpan Offset { get; set; } = TimeSpan.Zero;
 
     public AudioFileTrack(Project project, string trackName, string path)
         : base(project, trackName)
     {
-        this._path = path;
+        this.FilePath = path;
         this._waveStream = GetAudioStream(path);
     }
 
     public AudioFileTrack(Project project, AudioFileTrackConfig config)
         : base(project, config)
     {
-        this._path = config.FilePath;
+        this.FilePath = config.FilePath;
         this._waveStream = GetAudioStream(config.FilePath);
 
         this.IsMute = config.IsMute;
         //this.IsSolo = config.IsSolo;
         this.Volume = config.Volume;
+        this.Offset = config.Offset;
     }
 
     protected override WaveStream LoadAudioStream()
@@ -41,9 +46,10 @@ internal class AudioFileTrack : AudioTrackBase
         {
             TrackId = this.TrackId,
             TrackName = this.TrackName,
-            FilePath = this._path,
+            FilePath = this.FilePath,
             IsMute = this.IsMute,
             //IsSolo = this.IsSolo,
             Volume = this.Volume,
+            Offset = this.Offset,
         };
 }

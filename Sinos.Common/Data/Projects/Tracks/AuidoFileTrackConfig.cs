@@ -5,7 +5,7 @@ namespace Sinos.Data.Projects.Tracks;
 [MemoryPackable(GenerateType.VersionTolerant)]
 public partial class AudioFileTrackConfig : TrackBaseConfig
 {
-    private const int LatestVersion = 0;
+    private const int LatestVersion = 2;
 
     [MemoryPackOrder(2)]
     private int _version = LatestVersion;
@@ -22,14 +22,22 @@ public partial class AudioFileTrackConfig : TrackBaseConfig
     [MemoryPackOrder(6)]
     public required float Volume { get; set; }
 
+    [MemoryPackOrder(7)]
+    public required TimeSpan Offset { get; set; } = TimeSpan.Zero;
+
     [MemoryPackOnDeserialized]
     private void Migrate()
     {
-        if (this._version == 0)
+        if (this._version < 1)
         {
             this.IsMute = false;
             this.IsSolo = false;
             this.Volume = 1.0f;
+        }
+
+        if (this._version < 2)
+        {
+            this.Offset = TimeSpan.Zero;
         }
     }
 }

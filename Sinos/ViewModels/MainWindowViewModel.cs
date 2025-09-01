@@ -19,6 +19,7 @@ using Sinos.Projects.Tracks;
 using Sinos.Services;
 using Sinos.UI.Mvvm;
 using Sinos.Utils;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Sinos.ViewModels;
 
@@ -74,6 +75,11 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
         get => this._title;
         private set => this.SetProperty(ref this._title, value);
     }
+
+    /// <summary>
+    /// サイドバーの表示／非表示
+    /// </summary>
+    public bool IsSidebarVisible { get; set => this.SetProperty(ref field, value); }
 
     private Command? _openSettingWindowCommand;
 
@@ -156,6 +162,7 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
     public bool HasProject { get; private set; }
 
     /// <summary>プロジェクトのViewModel</summary>
+    [MemberNotNullWhen(true, nameof(HasProject))]
     public ProjectViewModel? ProjectViewModel { get; private set; }
 
     /// <summary>トラックのViewModel</summary>
@@ -374,11 +381,10 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
         //var track = project.Tracks.OfType<INeutrinoTrack>().LastOrDefault();
         //this.SetTrack(track);
 
-        //// オーディオトラックを設定する
-        //var audioFileTrack = project.Tracks.OfType<AudioFileTrack>().FirstOrDefault();
-        //this.AudioTrackViewModel = audioFileTrack is not null ? new(audioFileTrack) : null;
-
-        //this.RefreshAudio();
+        // オーディオトラックを設定する
+        this.AudioTrackViewModel = project.Tracks.TryGetAudioFileTrack(out var audioFileTrack)
+            ? new(audioFileTrack)
+            : null;
 
         this.UpdateCommands();
     }
@@ -469,5 +475,73 @@ internal partial class MainWindowViewModel : ViewModelBase, IDialogServiceViewMo
         {
             // TODO: 
         }
+    }
+
+    /// <summary>オーディオトラックの有無</summary>
+    public bool HasAudioFileTrack { get; private set => this.SetProperty(ref field, value); }
+
+    /// <summary>オーディオトラック用のViewModel</summary>
+    public AudioTrackViewModel? AudioTrackViewModel
+    {
+        get;
+        set
+        {
+            this.SetProperty(ref field, value);
+            this.HasAudioFileTrack = value != null;
+        }
+    }
+
+    /// <summary>オーディオをトラックを設定・変更するコマンド</summary>
+    public Command SelectAudioTrackCommand => field ??= this.AddCommand(async () =>
+    {
+        if (!this.HasProject)
+            return;
+
+        var project = this.ProjectViewModel!.Project;
+
+        var path = await this.DialogService.SelectOpenFileAsync(
+           title: "オーディオをラックに設定するファイルを選択",
+           initialDirectory: null,
+           fileTypeFilters: [new("WAVファイル") { Patterns = ["*.wav"] }]
+           ).ConfigureAwait(false);
+
+        if (path == null)
+            return; // cancel
+
+        project.Tracks.TryGetAudioFileTrack(out var prevTrack);
+
+        this.DeleteAudioFileTrack(project);
+
+        var newTrack = new AudioFileTrack(project, "Audio File", path);
+        if (prevTrack is not null)
+        {
+            newTrack.IsMute = false;
+            newTrack.Volume = prevTrack.Volume;
+        }
+        project.Tracks.Add(newTrack);
+        this.AudioTrackViewModel = new(newTrack);
+    });
+
+    /// <summary>オーディオトラックを削除するコマンド</summary>
+    public Command DeleteAudioTrackFileCommand => field ??= this.AddCommand(() =>
+    {
+        var project = this.ProjectViewModel?.Project;
+        if (project is null)
+            return;
+
+        this.DeleteAudioFileTrack(project);
+    });
+
+    private void DeleteAudioFileTrack(Project project)
+    {
+        var tracks = project.Tracks;
+
+        if (tracks.TryGetAudioFileTrack(out var track))
+        {
+            project.Tracks.Remove(track);
+            this.AudioTrackViewModel = null;
+        }
+
+        return;
     }
 }
