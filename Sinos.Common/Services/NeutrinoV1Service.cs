@@ -120,11 +120,16 @@ internal class NeutrinoV1Service
             var command = this.GetNeutrinoPath(MusicXmlExe);
 
             // コマンドライン引数の作成
-            var args = new StringBuilder();
-            args.Append($@"""{musicXmlFile.Path}"" ""{fullLabFile.Path}"" ""{monoLabFile.Path}""");
+            var args = new ProcessArgumentList()
+            {
+                // <xml_path> <full_lab_path> <mono_lab_path>
+                musicXmlFile.Path,
+                fullLabFile.Path,
+                monoLabFile.Path,
+            };
 
             if (!string.IsNullOrEmpty(option.Directory))
-                args.Append(" -x ").Append(option.Directory);
+                args.Add("-x", option.Directory);
 
             // ファイル受信処理のキャンセラ
             using var receiveTaskCanceler = new CancellationTokenSource();
@@ -139,7 +144,7 @@ internal class NeutrinoV1Service
             try
             {
                 // musicXMLtoLabelを実行
-                await NeutrinoUtil.Execute(command, args.ToString(), this.GetNeutrinoWorkingDirectory())
+                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory())
                     .ConfigureAwait(false);
             }
             finally
@@ -197,29 +202,37 @@ internal class NeutrinoV1Service
             var command = this.GetNeutrinoPath((v1Setting.UseLegacyExe ?? IsLegacy()) ? NeutrinoLegacyExe : NeutrinoExe);
 
             // コマンドライン引数の作成
-            var args = new StringBuilder();
-            args.Append($@"""{fullLabFile.Path}"" ""{timingFilePath}"" ""{f0File.Path}"" ""{mgcFile.Path}"" ""{bapFile.Path}"" {this.GetModelPath(option.Model.ModelId)}");
+            var args = new ProcessArgumentList()
+            {
+                // <full_lab_path> <timing_lab_path> <f0_path> <mgc_path> <bap_path> <model_dir>
+                fullLabFile.Path,
+                timingFilePath,
+                f0File.Path,
+                mgcFile.Path,
+                bapFile.Path,
+                this.GetModelPath(option.Model.ModelId),
+            };
 
-            if (option.NumberOfThreads != null)
-                args.Append(" -n ").Append(option.NumberOfThreads);
+            if (option.NumberOfThreads is { } numberOfThreads)
+                args.Add("-n", numberOfThreads);
 
-            if (option.StyleShift != null)
-                args.Append(" -k ").Append(option.StyleShift);
+            if (option.StyleShift is { } styleShift)
+                args.Add("-k", styleShift);
 
             if (option.IsSkipTimingPrediction)
-                args.Append(" -s");
+                args.Add("-s");
 
             if (option.IsSkipAcousticFeaturesPrediction)
-                args.Append(" -a");
+                args.Add("-a");
 
-            if (option.SinglePhrasePrediction != null)
-                args.Append(" -p ").Append(option.SinglePhrasePrediction);
+            if (option.SinglePhrasePrediction is { } singlePhrasePrediction)
+                args.Add("-p", singlePhrasePrediction);
 
             if (option.UseSingleGpu)
-                args.Append(" -g");
+                args.Add("-g");
 
             if (option.UseMultiGpus)
-                args.Append(" -m");
+                args.Add("-m");
 
             if (option.IsSkipTimingPrediction)
             {
@@ -237,11 +250,11 @@ internal class NeutrinoV1Service
                 receivePhraseFile = PipeFile.CreateReadOnly(FileExtensions.Text);
                 additionalDisposables.Add(receivePhraseFile);
 
-                args.Append(" -i ").AppendDoubleQuoted(receivePhraseFile.Path);
+                args.Add("-i", receivePhraseFile.Path);
             }
 
             if (option.IsViewInformation)
-                args.Append(" -t");
+                args.Append("-t");
 
             // ファイル受信処理のキャンセラ
             using var receiveTaskCanceler = new CancellationTokenSource();
@@ -268,7 +281,7 @@ internal class NeutrinoV1Service
             try
             {
                 // NEUTRINO実行
-                await NeutrinoUtil.Execute(command, args.ToString(), this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                     .ConfigureAwait(false);
             }
             finally
@@ -389,35 +402,40 @@ internal class NeutrinoV1Service
             bapFile.Write(DataConvertUtil.CastToByte(option.Bap));
 
             // コマンドライン引数の作成
-            var args = new StringBuilder();
-            args.Append($@"""{f0File.Path}"" ""{mgcFile.Path}"" ""{bapFile.Path}"" -o ""{wavFile.Path}""");
+            var args = new ProcessArgumentList()
+            {
+                f0File.Path,
+                mgcFile.Path,
+                bapFile.Path,
+                wavFile.Path,
+            };
 
-            if (option.PitchShift != null)
-                args.Append(" -f ").Append(option.PitchShift);
+            if (option.PitchShift is { } pitchShift)
+                args.Add("-f", pitchShift);
 
-            if (option.FormantShift != null)
-                args.Append(" -m ").Append(option.FormantShift);
+            if (option.FormantShift is { } formantShift)
+                args.Add("-m", formantShift);
 
-            if (option.NumberOfParallel != null)
-                args.Append(" -n ").Append(option.NumberOfParallel);
+            if (option.NumberOfParallel is { } numberOfParallel)
+                args.Add("-n", numberOfParallel);
 
             if (option.IsHiSpeedSynthesis)
-                args.Append(" -s");
+                args.Add("-s");
 
             if (option.IsRealtimeSynthesis)
-                args.Append(" -r");
+                args.Add("-r");
 
-            if (option.SmoothPitch != null)
-                args.Append(" -p ").Append(option.SmoothPitch);
+            if (option.SmoothPitch is { } smoothPitch)
+                args.Add("-p", smoothPitch);
 
-            if (option.SmoothFormant != null)
-                args.Append(" -c ").Append(option.SmoothFormant);
+            if (option.SmoothFormant is { } smoothFormant)
+                args.Add("-c", smoothFormant);
 
-            if (option.EnhanceBreathiness != null)
-                args.Append(" -b ").Append(option.EnhanceBreathiness);
+            if (option.EnhanceBreathiness is { } enhanceBreathiness)
+                args.Add("-b", enhanceBreathiness);
 
             if (option.IsViewInformation)
-                args.Append(" -t");
+                args.Add("-t");
 
             // ファイル受信処理のキャンセラ
             using var receiveTaskCanceler = new CancellationTokenSource();
@@ -428,7 +446,7 @@ internal class NeutrinoV1Service
             try
             {
                 // WORLD実行
-                await NeutrinoUtil.Execute(command, args.ToString(), this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                    .ConfigureAwait(false);
             }
             finally
@@ -543,17 +561,24 @@ internal class NeutrinoV1Service
             var command = this.GetNeutrinoPath(NsfExe);
 
             // コマンドライン引数の組み立て
-            var args = new StringBuilder();
-            args.Append($@"""{f0File.Path}"" ""{mgcFile.Path}"" ""{bapFile.Path}"" ""{this.GetModelPath(option.Model.ModelId)}model_nsf.bin"" ""{wavFile.Path}""");
+            var args = new ProcessArgumentList()
+            {
+                // <f0_path> <mgc_path> <bap_path> <model_nsf_path> <wav_path>
+                f0File.Path,
+                mgcFile.Path,
+                bapFile.Path,
+                $"{this.GetModelPath(option.Model.ModelId)}model_nsf.bin",
+                wavFile.Path,
+            };
 
-            if (option.SamplingRate != null)
-                args.Append(" -s ").Append(option.SamplingRate);
+            if (option.SamplingRate is { } samplingRate)
+                args.Add("-s", samplingRate);
 
-            if (option.NumberOfParallel != null)
-                args.Append(" -n ").Append(option.NumberOfParallel);
+            if (option.NumberOfParallel is { } numberOfParallel)
+                args.Add("-n", numberOfParallel);
 
-            if (option.NumberOfParallelInSession != null)
-                args.Append(" -p ").Append(option.NumberOfParallelInSession);
+            if (option.NumberOfParallelInSession is { } numberOfParallelInSession)
+                args.Add("-p", numberOfParallelInSession);
 
             if (option.MultiPhrasePrediction?.Count > 0)
             {
@@ -562,17 +587,17 @@ internal class NeutrinoV1Service
                 timingFile.Write(NeutrinoUtil.GetTimingContent(option.MultiPhrasePrediction));
                 additionalDisposable.Add(timingFile);
 
-                args.Append(" -l ").AppendDoubleQuoted(timingFile.Path);
+                args.Add("-l", timingFile.Path);
             }
 
             if (option.IsUseGpu)
-                args.Append(" -g");
+                args.Add("-g");
 
-            if (option.GpuId != null)
-                args.Append(" -i ").Append(option.GpuId);
+            if (option.GpuId is { } gpuId)
+                args.Add("-i", gpuId);
 
             if (option.IsViewInformation)
-                args.Append(" -t");
+                args.Add("-t");
 
             // ファイル受信処理のキャンセラ
             using var receiveTaskCanceler = new CancellationTokenSource();
@@ -583,7 +608,7 @@ internal class NeutrinoV1Service
             try
             {
                 // NSF実行
-                await NeutrinoUtil.Execute(command, args.ToString(), this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                     .ConfigureAwait(false);
             }
             finally

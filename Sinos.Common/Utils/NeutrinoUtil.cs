@@ -281,7 +281,7 @@ public static partial class NeutrinoUtil
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns><see cref="Task"/></returns>
     /// <exception cref="NeutrinoExecuteException">実行失敗情報</exception>
-    public static Task Execute(string command, string? args = null, string? workdir = null, IProgress<ProgressReport>? progress = null, CancellationToken cancellationToken = default)
+    public static Task Execute(string command, IEnumerable<string> args = null, string? workdir = null, IProgress<ProgressReport>? progress = null, CancellationToken cancellationToken = default)
         => Execute(Guid.NewGuid(), command, args, workdir, progress, cancellationToken);
 
     /// <summary>
@@ -295,7 +295,7 @@ public static partial class NeutrinoUtil
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns><see cref="Task"/></returns>
     /// <exception cref="NeutrinoExecuteException">実行失敗情報</exception>
-    public static async Task Execute(Guid executionId, string command, string? args = null, string? workdir = null, IProgress<ProgressReport>? progress = null, CancellationToken cancellationToken = default)
+    public static async Task Execute(Guid executionId, string command, IEnumerable<string>? args = null, string? workdir = null, IProgress<ProgressReport>? progress = null, CancellationToken cancellationToken = default)
     {
         // 実行開始から終了までの一連の流れを特定するための識別子
         var guid = Guid.NewGuid().ToString("N");
@@ -310,9 +310,18 @@ public static partial class NeutrinoUtil
         // 出力情報を保持しておく
         StringBuilder output = new();
 
+        var psi = new ProcessStartInfo()
+        {
+            FileName = command,
+            WorkingDirectory = workdir,
+        };
+
+        foreach (var arg in args ?? [])
+            psi.ArgumentList.Add(arg);
+
         try
         {
-            var (_, stdout, stderr) = ProcessX.GetDualAsyncEnumerable(command, args, workdir);
+            var (_, stdout, stderr) = ProcessX.GetDualAsyncEnumerable(psi);
 
             var stdoutTask = Task.Run(async () =>
             {
