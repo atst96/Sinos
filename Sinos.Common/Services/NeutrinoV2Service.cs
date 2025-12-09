@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Text;
+using Microsoft.Extensions.Logging;
 using Sinos.Components;
 using Sinos.Constants;
 using Sinos.Data;
@@ -19,8 +20,12 @@ namespace Sinos.Services;
 /// </summary>
 internal class NeutrinoV2Service
 {
+    private readonly ILogger<NeutrinoV2Service> _logger;
+
     /// <summary>設定情報</summary>
     private Settings _setting;
+
+    private readonly NeutrinoCommonService _commonService;
 
     /// <summary>binディレクトリのファイルパス</summary>
     private const string BinDirName = "bin";
@@ -50,9 +55,11 @@ internal class NeutrinoV2Service
     /// コンストラクタ
     /// </summary>
     /// <param name="settingService">アプリケーション設定情報</param>
-    public NeutrinoV2Service(SettingService settingService)
+    public NeutrinoV2Service(ILogger<NeutrinoV2Service> logger, SettingService settingService, NeutrinoCommonService commonService)
     {
+        this._logger = logger;
         this._setting = settingService.Settings;
+        this._commonService = commonService;
     }
 
     private string GetModelDir() => Path.Combine(this.GetNeutrinoWorkingDirectory(), "model");
@@ -142,7 +149,7 @@ internal class NeutrinoV2Service
             try
             {
                 // musicXMLtoLabelを実行
-                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory()).ConfigureAwait(false);
+                await this._commonService.Execute(command, args, this.GetNeutrinoWorkingDirectory()).ConfigureAwait(false);
             }
             finally
             {
@@ -300,7 +307,7 @@ internal class NeutrinoV2Service
             try
             {
                 // NEUTRINO実行
-                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await this._commonService.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                     .ConfigureAwait(false);
             }
             finally
@@ -480,7 +487,7 @@ internal class NeutrinoV2Service
             try
             {
                 // WORLD実行
-                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await this._commonService.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                     .ConfigureAwait(false);
             }
             finally
@@ -683,7 +690,7 @@ internal class NeutrinoV2Service
             try
             {
                 // NSF実行
-                await NeutrinoUtil.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
+                await this._commonService.Execute(command, args, this.GetNeutrinoWorkingDirectory(), progress, cancellationToken)
                     .ConfigureAwait(false);
             }
             finally

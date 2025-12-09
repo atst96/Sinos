@@ -130,7 +130,7 @@ internal class ProgressWindowViewModel : ViewModelBase, IDialogServiceViewModel,
             }
 
             this.IsFail = report.ReprotType == ProgressReportType.Error;
-            this.IsWaiting = report.ReprotType == ProgressReportType.Idertimate;
+            this.IsWaiting = report.ReprotType == ProgressReportType.Indeterminate;
             if (this.IsWaiting)
             {
                 this.Status = "処理中...";

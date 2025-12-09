@@ -1,7 +1,7 @@
 ﻿namespace Sinos.Data.Projects;
 public enum ProgressReportType
 {
-    Idertimate,
+    Indeterminate,
     InProgress,
     Error,
 }

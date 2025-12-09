@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Sinos.Compatibles;
 using Sinos.Factories;
 
@@ -38,6 +39,7 @@ public static class ServiceLocator
     public static T GetService<T>() where T : class
         => ServiceProvider.GetService<T>() ?? throw new Exception($"Type {typeof(T)} not found.");
 
+
     /// <summary>
     /// 共有プロジェクト(Sinos.Common)のサービスを登録
     /// </summary>
@@ -45,7 +47,15 @@ public static class ServiceLocator
     private static T RegisterContext<T>(this T services) where T : IServiceCollection
     {
         services
+            // Logger
+            .AddLogging(builder =>
+            {
+                builder.ClearProviders();
+                builder.SetMinimumLevel(LogLevel.Trace);
+                builder.AddDebug();
+            })
             // Services
+            .AddSingleton<NeutrinoCommonService>()
             .AddSingleton<NeutrinoV1Service>()
             .AddSingleton<NeutrinoV2Service>()
             .AddSingleton<ProjectService>()
