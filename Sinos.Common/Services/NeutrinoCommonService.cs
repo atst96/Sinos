@@ -43,36 +43,65 @@ public class NeutrinoCommonService(ILogger<NeutrinoCommonService> logger)
     {
         // 実行開始から終了までの一連の流れを特定するための識別子
         var logPrefix = $"[Process: {executionId:N}]";
+        var logger = this._logger;
 
         // 実行開始ログ
-        this._logger.LogTrace($"{logPrefix} === START NEUTRINO ===");
-        this._logger.LogTrace($"{logPrefix} Pwd: {workdir}");
-        this._logger.LogTrace($"{logPrefix} Execute: {command}\t{string.Join("\t", args ?? [])}");
-
-        bool isInitializing = true;
+        logger.LogDebug($"{logPrefix} === START NEUTRINO ===");
+        logger.LogDebug($"{logPrefix} Pwd: {workdir}");
+        logger.LogDebug($"{logPrefix} Execute: {command}\t{string.Join("\t", args ?? [])}");
 
         // 出力情報を保持しておく
         StringBuilder output = new();
 
-        var psi = new ProcessStartInfo()
+        var lockObj = new Lock();
+        void OnConsoleWrite(string line)
+        {
+            lock (lockObj)
+                output.AppendLine(line);
+        }
+
+        var processInfo = new ProcessStartInfo()
         {
             FileName = command,
             WorkingDirectory = workdir,
         };
-
         foreach (var arg in args ?? [])
-            psi.ArgumentList.Add(arg);
+            processInfo.ArgumentList.Add(arg);
 
         try
         {
-            var (_, stdout, stderr) = ProcessX.GetDualAsyncEnumerable(psi);
+            var (_, stdout, stderr) = ProcessX.GetDualAsyncEnumerable(processInfo);
 
-            var stdoutTask = Task.Run(async () =>
+            var stdoutTask = this.ReadConsoleWriteWithProgress(logPrefix, stdout, progress, OnConsoleWrite, cancellationToken);
+            var stderrTask = this.ReadConsoleWrite(logPrefix, stderr, OnConsoleWrite, cancellationToken);
+
+            await Task.WhenAll(stdoutTask, stderrTask).ConfigureAwait(false);
+        }
+        catch (ProcessErrorException pee)
+        {
+            // 実行失敗時
+            logger.LogWarning(pee, $"{logPrefix} Neutrino execution failed.");
+
+            progress?.Report(new(ProgressReportType.Error, null, 100));
+
+            throw new NeutrinoExecuteException(
+                command, workdir, args, pee.ExitCode, output.ToString(), pee);
+        }
+        finally
+        {
+            // 実行終了ログ
+            logger.LogDebug($"{logPrefix} === END NEUTRINO ===");
+        }
+    }
+
+    private async Task ReadConsoleWriteWithProgress(string logPrefix, IAsyncEnumerable<string> enumerable, IProgress<ProgressReport>? progress, Action<string> onConsoleWriteLine, CancellationToken cancellationToken)
             {
-                await foreach (var line in stdout.WithCancellation(cancellationToken).ConfigureAwait(false))
+        bool isInitializing = true;
+
+        await foreach (var line in enumerable.WithCancellation(cancellationToken).ConfigureAwait(false))
                 {
                     this._logger.LogTrace($"{logPrefix} {line}");
-                    output.AppendLine(line);
+            onConsoleWriteLine.Invoke(line);
 
                     double? progressValue = null;
 
@@ -85,33 +114,14 @@ public class NeutrinoCommonService(ILogger<NeutrinoCommonService> logger)
 
                     progress?.Report(new(isInitializing ? ProgressReportType.Indeterminate : ProgressReportType.InProgress, line, progressValue));
                 }
-            });
-
-            var stderrTask = Task.Run(async () =>
-            {
-                await foreach (var line in stderr.WithCancellation(cancellationToken).ConfigureAwait(false))
-                {
-                    this._logger.LogTrace($"{logPrefix} {line}");
-                    output.AppendLine(line);
                 }
-            });
 
-            await Task.WhenAll(stdoutTask, stderrTask).ConfigureAwait(false);
-        }
-        catch (ProcessErrorException pee)
+    private async Task ReadConsoleWrite(string logPrefix, IAsyncEnumerable<string> enumerable, Action<string> onConsoleWriteLine, CancellationToken cancellationToken)
         {
-            // 実行失敗時
-            progress?.Report(new(ProgressReportType.Error, null, 100));
-
-            this._logger.LogWarning(pee, $"{logPrefix} Neutrino execution failed.");
-
-            throw new NeutrinoExecuteException(
-                command, workdir, args, pee.ExitCode, output.ToString(), pee);
-        }
-        finally
+        await foreach (var line in enumerable.WithCancellation(cancellationToken).ConfigureAwait(false))
         {
-            // 実行終了ログ
-            this._logger.LogTrace($"{logPrefix} === END NEUTRINO ===");
+            this._logger.LogWarning($"{logPrefix} {line}");
+            onConsoleWriteLine.Invoke(line);
         }
     }
 }
