@@ -162,7 +162,7 @@ public class NeutrinoV1Phrase : INeutrinoPhrase, IF0Phrase<double>, IMgcDynamics
     /// 編集内容を反映したMGCを取得する。
     /// </summary>
     /// <returns></returns>
-    [return: NotNullIfNotNull(nameof(this.Mgc))]
+    [return: NotNullIfNotNull(nameof(Mgc))]
     public double[]? GetEditedMgc()
     {
         double[]? srcMgc = this.Mgc;
@@ -192,7 +192,7 @@ public class NeutrinoV1Phrase : INeutrinoPhrase, IF0Phrase<double>, IMgcDynamics
     /// 編集内容を反映したMGCを取得する。
     /// </summary>
     /// <returns></returns>
-    [return: NotNullIfNotNull(nameof(this.Mgc))]
+    [return: NotNullIfNotNull(nameof(Mgc))]
     public double[]? GetEditingMgc()
     {
         double[]? srcMgc = this.Mgc;

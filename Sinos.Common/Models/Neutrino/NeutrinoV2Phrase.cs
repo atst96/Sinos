@@ -197,7 +197,7 @@ internal class NeutrinoV2Phrase : INeutrinoPhrase, IF0Phrase<float>, IMspecDynam
     /// 編集中内容を反映したMspecを取得する。
     /// </summary>
     /// <returns></returns>
-    [return: NotNullIfNotNull(nameof(this.Mspec))]
+    [return: NotNullIfNotNull(nameof(Mspec))]
     public float[]? GetEditingMspec()
         => MergeMspec(this.Mspec, this.EditingDynamics ?? this.EditedDynamics);
 
@@ -205,7 +205,7 @@ internal class NeutrinoV2Phrase : INeutrinoPhrase, IF0Phrase<float>, IMspecDynam
     /// 編集内容を反映したMspecを取得する。
     /// </summary>
     /// <returns></returns>
-    [return: NotNullIfNotNull(nameof(this.Mspec))]
+    [return: NotNullIfNotNull(nameof(Mspec))]
     public float[]? GetEditedMspec()
         => MergeMspec(this.Mspec, this.EditedDynamics);
 
