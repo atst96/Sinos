@@ -1,5 +1,7 @@
-﻿using NAudio.CoreAudioApi;
-using NAudio.Wave;
+﻿using NAudio.Wave;
+using NAudio.CoreAudioApi;
+using Sinos.Audio;
+using System;
 
 namespace Sinos.Services;
 
@@ -20,5 +22,7 @@ internal class AudioSessionManager()
     /// <summary>オーディオデバイスを自動的に選択する</summary>
     /// <returns></returns>
     private static IWavePlayer GetDefaultDevice()
-        => new WasapiOut(AudioClientShareMode.Shared, 48 * 2);
+        => OperatingSystem.IsWindows()
+            ? new WasapiOut(AudioClientShareMode.Shared, 100)
+            : new MiniAudioOut(100);
 }

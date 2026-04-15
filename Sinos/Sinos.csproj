@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Sinos.Audio\Sinos.Audio.csproj" />
     <ProjectReference Include="..\Sinos.Common\Sinos.Common.csproj" />
   </ItemGroup>
 
